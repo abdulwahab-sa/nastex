@@ -12,6 +12,11 @@
 }
 
 .home-cover {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   --g:#0000 ,#000 .5deg 90deg,#0000 91deg;
   --m:
     conic-gradient(from 45deg ,var(--g)) 20px 0  no-repeat,
@@ -32,5 +37,25 @@
 .home-message{
   clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
 }
+.custom-shape-divider-top-1678283023 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1678283023 svg {
+  position: relative;
+  display: block;
+  width: calc(115% + 1.3px);
+  height: 120px;
+}
+.red{
+  filter: invert(17%) sepia(47%) saturate(6002%) hue-rotate(353deg) brightness(82%) contrast(122%);
+}
+
+
 
 }

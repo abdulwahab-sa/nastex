@@ -40,12 +40,6 @@ function App() {
 							<Route path="/" exact element={<Home />} />
 							<Route path="/about" element={<About />} />
 							<Route path="/contact" element={<Contact />} />
-							{/*
-							<Route path="/:category" element={<MainCategory />} />
-							<Route path="/:category/:subcategory" element={<SubCategory />} />
-							<Route path="/:category/:subcategory/:productId" exact element={<ProductDetail />} />
-
-*/}
 							<Route path="/customorder" element={<Customorder />} />
 						</Routes>
 					</div>
@@ -56,3 +50,12 @@ function App() {
 }
 
 export default App;
+
+{
+	/*
+							<Route path="/:category" element={<MainCategory />} />
+							<Route path="/:category/:subcategory" element={<SubCategory />} />
+							<Route path="/:category/:subcategory/:productId" exact element={<ProductDetail />} />
+
+*/
+}
