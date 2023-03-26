@@ -10,6 +10,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import { useAuthContext } from './hooks/useAuthContext';
+import Products from './pages/Products';
 
 function App() {
 	const [data, setData] = useState([]);
@@ -38,6 +39,7 @@ function App() {
 					<div id="main-content">
 						<Routes>
 							<Route path="/" exact element={<Home />} />
+							<Route path="/products" element={<Products />} />
 							<Route path="/about" element={<About />} />
 							<Route path="/contact" element={<Contact />} />
 							<Route path="/customorder" element={<Customorder />} />

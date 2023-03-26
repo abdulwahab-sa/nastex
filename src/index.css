@@ -55,7 +55,25 @@
 .red{
   filter: invert(17%) sepia(47%) saturate(6002%) hue-rotate(353deg) brightness(82%) contrast(122%);
 }
+.custom-shape-divider-bottom-1679569951 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
 
+.custom-shape-divider-bottom-1679569951 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 155px;
+}
+
+.custom-shape-divider-bottom-1679569951 .shape-fill {
+  fill: #fff;
+}
 
 
 }
