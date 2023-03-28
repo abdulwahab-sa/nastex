@@ -168,7 +168,7 @@ const Home = () => {
 
 			*/}
 			<div className="relative bg-gray-50">
-				<img src={cover} alt="" className="w-full h-full shadow-xl object-cover" />
+				<img src={cover} alt="" className="w-full h-full shadow-sm object-cover" />
 				<div className=" absolute flex flex-col  top-1/2 -translate-y-1/2 left-1/4 -translate-x-1/4 text-center font-semibold md:tracking-widest">
 					<h2 className="  text-darkGray text-lg md:text-5xl"># 1</h2>
 					<h2 className=" text-gray-100 bg-lightRed rounded-md text-lg md:text-3xl md:my-2 md:py-2">CLOTHING</h2>
