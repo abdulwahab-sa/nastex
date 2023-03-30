@@ -71,9 +71,9 @@ const productsDropdown = [
 const popularProducts = [
 	{
 		id: 1,
-		mainCategory: 'CASUALWEAR',
-		subCategory: 'T-shirts',
-		productName: 'Roundneck T-shirt',
+		mainCategory: 'TEAMWEAR',
+		subCategory: 'uniforms',
+		productName: 'soccer set',
 		article: 'TC-07',
 		subCategoryImg: `${casualImage}`,
 		productImg: `${casualImage}`,
@@ -265,15 +265,6 @@ const ReviewData = [
 ];
 
 const finalData = [
-	{
-		id: 1,
-		mainCategory: 'CASUALWEAR',
-		subCategory: 'Hoodies',
-		productName: 'Pullover Hoodie',
-		article: 'TC-01',
-		subCategoryImg: `${casualImage}`,
-		productImg: `${casualImage}`,
-	},
 	{
 		id: 2,
 		mainCategory: 'CASUALWEAR',

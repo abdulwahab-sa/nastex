@@ -1,0 +1,3 @@
+// All products display as default
+// Clicking on category will update the state and only that particular category products will be displayed
+// Choosing a subcategory will update the state again and only those subcategory products will be displayed

@@ -75,5 +75,44 @@
   fill: #fff;
 }
 
+.paginationBtns{
+  width: 80%;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 12px;
+}
+
+.paginationBtns a{
+  padding: 8px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+
+}
+
+.paginationBtns a:hover {
+  color: #fff;
+  background-color:  #303030;
+}
+
+.paginationActive a{
+  background-color: #303030;
+  color: #fff;
+}
+
+.paginationDisabled a{
+  background-color: lightgray;
+
+}
+
+.paginationDisabled a:hover{
+  background-color: lightgray;
+  color: inherit;
+  
+}
+
 
 }
