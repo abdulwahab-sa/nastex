@@ -82,29 +82,34 @@ const Products = () => {
 		const productData = products.find((el) => el.id === prodId);
 
 		return (
-			<div className="fixed inset-0 my-auto h-96 w-72 md:w-3/5 md:mb-3 text-darkGray mx-auto border border-stone-300 bg-neutral-100 shadow-2xl">
-				<div className=" flex items-center justify-start py-4 px-2 cursor-pointer border-b border-stone-300">
-					<FaAngleLeft />
-					<span className="text-xs font-medium mx-2"> BACK TO ALL PRODUCTS</span>
-				</div>
-				<div className="md:flex md:w-full md:h-80 ">
-					<img src={productData.productImg} alt="" className=" w-full h-72 md:w-1/2 object-cover object-center " />
-					<div className="h-full p-3 md:overflow-y-auto">
-						<h2 className="font-semibold text-xl"> {productData.productName} </h2>
-						<h3 className="font-medium text-sm"> {productData.mainCategory}</h3>
-						<h6 className="text-xs font-medium mt-2"> {productData.article}</h6>
-						<p className="my-2 text-sm md:text-xs md:my-4">
-							{' '}
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-							enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-						</p>
-						<button
-							className="py-3 px-2 mt-2 text-xs md:py-2 md:px-2 border border-gray-300 font-semibold text-darkGray rounded-md hover:bg-stone-300 transition-all"
-							onClick={() => setModal(!modal)}
-						>
-							{' '}
-							SEND INQUIRY{' '}
-						</button>
+			<div className="fixed bg-darkGray bg-opacity-60 w-full inset-0  flex flex-col justify-start items-center">
+				<div className=" overflow-y-scroll md:overflow-y-hidden md:h-96 w-72 md:w-3/5 md:my-auto bg-opacity-100 text-darkGray border border-stone-300 bg-neutral-100 shadow-2xl">
+					<div
+						className=" flex items-center justify-start py-4 px-2 cursor-pointer border-b border-stone-300"
+						onClick={() => setModal(!modal)}
+					>
+						<FaAngleLeft />
+						<span className="text-xs font-medium mx-2"> BACK TO ALL PRODUCTS</span>
+					</div>
+					<div className="md:flex md:w-full md:h-80 ">
+						<img src={productData.productImg} alt="" className=" w-full h-72 md:w-1/2 object-cover object-center " />
+						<div className="h-full p-3 md:overflow-y-auto bg-gray-50">
+							<h2 className="font-semibold text-xl"> {productData.productName} </h2>
+							<h3 className="font-medium text-sm"> {productData.mainCategory}</h3>
+							<h6 className="text-xs font-medium mt-2"> {productData.article}</h6>
+							<p className="my-2 text-sm md:text-xs md:my-4">
+								{' '}
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							</p>
+							<button
+								className="py-3 px-2 mt-2 text-xs md:py-2 md:px-2 border border-gray-300 font-semibold text-darkGray rounded-md hover:bg-stone-300 transition-all"
+								onClick={() => setModal(!modal)}
+							>
+								{' '}
+								SEND INQUIRY{' '}
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -173,7 +178,7 @@ const Products = () => {
 				{categories.map((el) => {
 					return (
 						<button
-							className="py-2 px-3 m-1 text-darkGray font-semibold text-xs border border-stone-300 rounded-md"
+							className="p-3 m-1 text-darkGray font-semibold text-sm border border-stone-300 rounded-md hover:bg-lightRed hover:text-gray-50 transition-all"
 							key={el.id}
 							onClick={() => handleCategory(el.title)}
 						>
@@ -198,18 +203,18 @@ const Products = () => {
 			</div>
 
 			{showFilters && (
-				<div className="px-4 mt-4 mb-6">
+				<div className="px-4 mt-4 mb-6 md:flex md:justify-around">
 					<input
 						type="text"
 						value={searchInput}
 						onChange={handleChange}
 						onKeyDown={handleKeyDown}
 						placeholder="Search products"
-						className="p-2 w-full text-darkGray bg-stone-200 rounded-md focus:outline-none"
+						className="w-full p-2 md:w-2/5 text-darkGray bg-stone-200 rounded-md focus:outline-none"
 					/>
 					<select
 						color="red"
-						className="p-2 text-darkGray w-full mt-2 border border-gray-300 rounded-md focus:outline-none"
+						className=" md:w-2/5 p-2  text-darkGray w-full mt-2 md:mt-0 border border-gray-300 rounded-md focus:outline-none"
 						value={subcategoryFilter}
 						onChange={handleFilter}
 					>
@@ -220,7 +225,7 @@ const Products = () => {
 					</select>
 				</div>
 			)}
-			<div className="w-full h-full md:flex md:flex-wrap justify-center items-center p-2">
+			<div className="w-full h-full flex flex-col md:flex-row md:flex-wrap justify-center items-center p-2">
 				{displayProducts}
 
 				{/*products &&
