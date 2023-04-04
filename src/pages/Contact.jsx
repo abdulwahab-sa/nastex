@@ -44,9 +44,9 @@ export const Contact = () => {
 		},
 	];
 	return (
-		<div className="w-full h-full text-darkGray">
-			<div className="mt-20 flex flex-col items-center md:flex-row md:justify-around">
-				<div className="px-4 md:px-16 md:w-1/2">
+		<div className=" mt-14 w-full h-full text-darkGray overflow-hidden">
+			<div className=" px-4 md:px-16 flex flex-col items-center md:flex-row md:justify-evenly">
+				<div className=" md:w-1/2">
 					<h2 className="text-xl md:text-2xl font-semibold">Get in Touch with us</h2>
 					<p className="text-sm md:text-md mt-1">
 						You can get in touch on our email or via phone. Or you can fill out our contact form and our team will reach out to you.
@@ -58,14 +58,14 @@ export const Contact = () => {
 									<el.icon className="text-2xl" />
 								</div>
 								<div className="ml-6 ">
-									<h2 className="text-md font-semibold">{el.title}</h2>
-									<span className="text-sm font-medium text-gray-600">{el.detail}</span>
+									<h2 className="text-sm font-semibold">{el.title}</h2>
+									<span className="text-xs font-medium text-gray-600">{el.detail}</span>
 								</div>
 							</div>
 						);
 					})}
 				</div>
-				<div className="bg-red-800 p-6 rounded-md mt-10 md:m-0 w-10/12 md:w-2/5">
+				<div className="bg-red-800 p-6 rounded-md mt-10 md:m-0 w-10/12 md:w-2/5 max-w-xs shadow-md">
 					<form onSubmit={handleSubmit(onSubmit)} className="relative">
 						<div className="relative  my-2">
 							<MdPerson className="text-stone-500 absolute text-xs z-20 inset-2 " />

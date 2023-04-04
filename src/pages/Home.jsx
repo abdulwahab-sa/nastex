@@ -230,11 +230,11 @@ const Home = () => {
 						your customers' needs. So whether you're a sports club, streetwear brand, or fitness apparel brand, we are here to help you take
 						your business to the next level.
 					</p>
-					<div class="flex items-start justify-center my-6 md:w-8/12">
+					<div class="flex items-center justify-center my-6 md:w-8/12">
 						<span>
 							<img src={grow} alt="" className="w-16 h-16 " />
 						</span>
-						<span class="font-semibold text-2xl ml-3">Grow your brand with Pentago Mfg Corp</span>
+						<span class="font-semibold text-2xl ml-3">Grow your brand with Pentago</span>
 					</div>
 				</div>
 				<div class=" h-full w-11/12 mx-auto bg-gray-100 py-8 text-center font-normal flex flex-col items-center justify-center rounded-xl shadow-xl md:flex-row md:justify-evenly z-30">
@@ -385,12 +385,12 @@ const Home = () => {
 							onClick={() => handleToggle(el.id)}
 						>
 							<div className="h-3 text-sm font-medium flex flex-col items-center justify-center ">
-								<div className={`w-full flex justify-between items-center text-base font-medium text-darkGray}`}>
+								<div className={`w-full flex justify-between items-center text-sm font-medium text-darkGray}`}>
 									<p className="">{el.question} </p>
 									<span className="text-md font-bold ">{open === el.id ? <FaAngleUp /> : <FaAngleDown />}</span>
 								</div>
 							</div>
-							<p className={`mt-8 py-3 text-darkGray  ${open === el.id ? 'block' : 'hidden'}`}>{el.answer}</p>
+							<p className={`mt-8 py-3 text-darkGray text-xs  ${open === el.id ? 'block' : 'hidden'}`}>{el.answer}</p>
 						</div>
 					);
 				})}

@@ -28,8 +28,8 @@ const Customorder = () => {
 	};
 
 	return (
-		<div className="w-full h-full p-2 overflow-hidden">
-			<div className=" relative text-darkGray text-center mt-32 md:mt-20  mx-auto w-11/12 md:w-7/12">
+		<div className="w-full h-full mt-14 p-2 overflow-hidden">
+			<div className=" relative text-darkGray text-center   mx-auto w-11/12 md:w-7/12">
 				<div className="absolute inset-0 w-72 h-72 bg-lightRed rounded-full mix-blend-multiply filter blur-xl opacity-10 "></div>
 				<div className="absolute bottom-0 right-0 w-72 h-72 bg-lightRed rounded-full mix-blend-multiply filter blur-xl opacity-10 "></div>
 

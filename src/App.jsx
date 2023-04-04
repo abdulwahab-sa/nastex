@@ -1,6 +1,5 @@
 import './App.css';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-
 import Home from './pages/Home';
 import { About } from './pages/About';
 import Customorder from './pages/Customorder';
@@ -8,9 +7,10 @@ import { Contact } from './pages/Contact';
 import { ProductContext } from './context/ProductContext';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-
 import { useAuthContext } from './hooks/useAuthContext';
 import Products from './pages/Products';
+import Navigation from './components/Navigation';
+import Footer from './components/Footer';
 
 function App() {
 	const [data, setData] = useState([]);
@@ -36,6 +36,7 @@ function App() {
 		<BrowserRouter>
 			<ProductContext.Provider value={{ data }}>
 				<div id="container">
+					<Navigation />
 					<div id="main-content">
 						<Routes>
 							<Route path="/" exact element={<Home />} />
@@ -45,6 +46,7 @@ function App() {
 							<Route path="/customorder" element={<Customorder />} />
 						</Routes>
 					</div>
+					<Footer />
 				</div>
 			</ProductContext.Provider>
 		</BrowserRouter>

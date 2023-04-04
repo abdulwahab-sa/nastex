@@ -6,9 +6,9 @@ import ceo from './../images/ceo-pic.jpeg';
 
 export const About = () => {
 	return (
-		<div className="w-full h-full">
-			<div className="mt-32 px-6">
-				<h4 className="text-md md:text-xl font-semibold my-3 text-darkRed">We are Pentago</h4>
+		<div className="mt-14 w-full h-full">
+			<div className="px-6">
+				<h4 className="text-md md:text-xl font-semibold my-3 text-lightRed">We are Pentago</h4>
 				<h2 className="text-md md:text-3xl font-medium text-darkGray">We set out to help your brand</h2>
 				<h2 className="text-md md:text-3xl font-medium text-stone-400">with a better way to order</h2>
 			</div>
