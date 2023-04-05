@@ -44,7 +44,7 @@ export const Contact = () => {
 		},
 	];
 	return (
-		<div className=" mt-14 w-full h-full text-darkGray overflow-hidden">
+		<div className=" my-14 w-full h-full text-darkGray overflow-hidden">
 			<div className=" px-4 md:px-16 flex flex-col items-center md:flex-row md:justify-evenly">
 				<div className=" md:w-1/2">
 					<h2 className="text-xl md:text-2xl font-semibold">Get in Touch with us</h2>

@@ -19,7 +19,7 @@ import order from './../assets/order.svg';
 import tshirt from './../assets/tshirt.svg';
 import quality from './../assets/quality.svg';
 import grow from './../assets/grow.svg';
-import cover from './../images/cover5.jpg';
+import cover from './../images/pentago_cover.jpg';
 
 const homeData = [
 	{
@@ -157,56 +157,15 @@ const Home = () => {
 
 	return (
 		<div className=" bg-gray-100  h-full w-full overflow-hidden">
-			{/* 
-			<div className="home-message bg-stone-800 h-full w-72 px-4 pb-8 pt-2 text-center mx-auto flex flex-col mb-4 mt-32 rounded-xl relative lg:w-2/4">
-				<span className="text-lightRed text-xl font-semibold my-2">WE UNDERSTAND</span>
-
-				<span className="text-gray-200 text-lg font-semibold mb-16 ">
-					Finding a good apparel manufacturer can be tough. Here's how we can help.{' '}
-				</span>
-			</div>
-
-			*/}
 			<div className="relative bg-gray-50">
-				<img src={cover} alt="" className="w-full h-full shadow-sm object-cover" />
-				<div className=" absolute flex flex-col  top-1/2 -translate-y-1/2 left-1/4 -translate-x-1/4 text-center font-semibold md:tracking-widest">
-					<h2 className="  text-darkGray text-lg md:text-5xl"># 1</h2>
-					<h2 className=" text-gray-100 bg-lightRed rounded-md text-lg md:text-3xl md:my-2 md:py-2">CLOTHING</h2>
-					<h2 className=" text-darkGray text-lg md:text-3xl"> MANUFACTURER</h2>
-
-					{/* <div class="absolute inset-0 h-full w-full bg-lightRed rounded-full mix-blend-color-dodge blur-lg animate-smallBlob z-20"></div>*/}
-				</div>
-
-				{/* 
-				
-				<div className="md:absolute md:top-3/4 md:-translate-y-3/4 md:left-1/4 md:-translate-x-1/2  md:w-1/2">
-					<div className="relative text-center mt-8 text-darkGray ">
-						{' '}
-						<span className=" text-2xl md:text-xl font-semibold leading-2">
-							{' '}
-							Casual, Fitness, Sports Apparels & many more <span className="text-2xl text-lightRed">+</span>{' '}
-						</span>
-						<div class="absolute inset-0 h-full w-full bg-red-300 rounded-full  mix-blend-multiply filter blur-md opacity-50 animate-smallBlob z-20"></div>
-					</div>
-					<div className="text-center mt-2">
-						<button className="px-3 py-2 my-8 mx-auto rounded-md bg-lightRed text-gray-100 text-md font-semibold hover:bg-darkRed shadow-stone-700/20 transition-all ">
-							Get Quote
-						</button>
+				<img src={cover} alt="" className="w-full h-screen shadow-sm object-cover" />
+				<div className=" absolute top-1/2 -translate-y-1/2 left-0 right-0  text-center font-semibold md:tracking-widest">
+					<div className="z-40">
+						<h2 className=" text-gray-100 bg-red-800 text-lg md:text-3xl md:my-2 md:py-2 font-semibold"> #1 CLOTHING MANUFACTURER</h2>
 					</div>
 				</div>
-				*/}
-				{/* 
-				<div class="custom-shape-divider-bottom-1679569951">
-					<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-						<path
-							d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-							class="fill-gray-100"
-						></path>
-					</svg>
-				</div>
-				*/}
 			</div>
-			<div className="bg-gray-50 pt-10 text-center flex flex-col">
+			<div className="hidden bg-gray-50 pt-10 text-center flex flex-col">
 				<span className=" text-xl md:text-2xl font-semibold">
 					{' '}
 					Casual, Fitness, Sports Apparels & many more <span className="text-2xl text-lightRed">+</span>{' '}
@@ -217,7 +176,7 @@ const Home = () => {
 				</button>
 			</div>
 
-			<div class=" h-full p-6 bg-darkRed">
+			<div class=" h-full p-6 bg-red-800">
 				<div class="hide-card flex flex-col items-center justify-center text-center text-gray-100  px-3">
 					<h2 class="text-2xl font-semibold my-2">ABOUT OUR COMPANY</h2>
 
@@ -265,9 +224,7 @@ const Home = () => {
 			</div>
 
 			<div className="relative mx-auto flex flex-col justify-center px-4  bg-gray-50">
-				<div className="absolute h-44 w-44 top-1/4 bottom-0 -left-20  bg-darkRed rounded-xl opacity-20 rotate-45  "></div>
-				<div className="absolute h-44 w-44 top-3/4 bottom-0 -right-20  bg-darkRed rounded-xl opacity-20 -rotate-45  "></div>
-
+				<div className="absolute h-20 w-20 top-1/4 -left-10  bg-darkRed rounded-xl opacity-20 rotate-45  "></div>
 				<span className=" my-8 text-2xl font-semibold md:text-center">
 					{' '}
 					<span className="text-darkGray">Looking for the Best Manufacturer?</span> <br />{' '}
@@ -299,9 +256,6 @@ const Home = () => {
 
 			<div>
 				<div className="relative h-full w-full flex flex-col bg-gray-50  py-8 ">
-					<div className="absolute h-44 w-44 top-1/4 bottom-0 -left-20  bg-darkRed rounded-xl opacity-20 rotate-45  "></div>
-					<div className="absolute h-44 w-44 top-3/4 bottom-0 -right-20  bg-darkRed rounded-xl opacity-20 -rotate-45  "></div>
-
 					<span className="my-8 px-4 md:text-center text-2xl font-semibold lg:text-3xl">
 						{' '}
 						<span className="text-darkGray"> Our Products range </span> <br /> <span className="text-lightRed"> shows our diversity</span>{' '}
@@ -347,8 +301,6 @@ const Home = () => {
 			</div>
 
 			<div className=" relative h-full w-full flex flex-col bg-gray-50">
-				<div className="absolute h-44 w-44 top-1/4 bottom-0 -left-20  bg-darkRed rounded-xl opacity-20 rotate-45  "></div>
-				<div className="absolute h-44 w-44 top-3/4 bottom-0 -right-20  bg-darkRed rounded-xl opacity-20 -rotate-45  "></div>
 				<span className="my-2 px-4 text-2xl font-semibold lg:text-3xl md:text-center z-30">
 					{' '}
 					<span className="text-darkGray">Interesting Facts</span> <br /> <span className="text-lightRed"> about Pentago</span>{' '}
@@ -370,9 +322,6 @@ const Home = () => {
 			</div>
 
 			<div className="relative h-full w-full flex flex-col bg-gray-50 py-8 px-2">
-				<div className="absolute h-44 w-44 top-1/4 bottom-0 -left-20  bg-darkRed rounded-xl opacity-20 rotate-45  "></div>
-				<div className="absolute h-44 w-44 top-3/4 bottom-0 -right-20  bg-darkRed rounded-xl opacity-20 -rotate-45  "></div>
-
 				<span className="px-4 my-4 text-2xl font-semibold lg:text-3xl md:text-center">
 					{' '}
 					<span className="text-darkGray">Frequently Asked</span> <br /> <span className="text-lightRed"> Questions (FAQ)</span>{' '}

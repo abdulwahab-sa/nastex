@@ -25,7 +25,7 @@ const Footer = () => {
 	const d = new Date();
 	return (
 		<div className="w-full h-full">
-			<div className="mt-4 flex flex-col space-y-4 md:space-y-0 md:flex-row md:items-start md:space-x-4 md:justify-evenly py-5 px-5 bg-stone-800  border border-b-1 border-gray-700 ">
+			<div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:items-start md:space-x-8 md:justify-evenly py-5 px-5 bg-stone-800  border border-b-1 border-gray-700 ">
 				<div className="max-w-xs">
 					<img src={logo} alt="" className="w-10 mb-3" />
 					<p className="text-xs font-light text-gray-300">
