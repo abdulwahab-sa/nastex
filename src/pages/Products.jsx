@@ -6,6 +6,7 @@ import imgFour from './../images/imgFour.jpg';
 import img from './../images/russel.jpg';
 import { allProducts, finalData } from '../data';
 import streetwearimg from './../images/streetwear.jpg';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const categories = [
 	{
@@ -61,8 +62,15 @@ const Products = () => {
 
 	const displayProducts = products.slice(pagesVisited, pagesVisited + productsPerPage).map((el, index) => {
 		return (
-			<div className="h-full w-56 bg-neutral-100 shadow-lg m-2 p-2 rounded-lg" key={index}>
-				<img src={el.productImg} alt="" className="h-40 w-full object-cover object-center rounded-lg" />
+			<motion.div
+				layout
+				animate={{ opacity: 1 }}
+				initial={{ opacity: 0 }}
+				exit={{ opacity: 0 }}
+				className="h-full w-56 bg-neutral-100 shadow-lg m-2 p-2 rounded-lg"
+				key={index}
+			>
+				<img src={el.productImg} alt="" className="h-40 w-full object-cover object-center rounded-lg" loading="lazy" />
 				<div className="h-full">
 					<h2 className="text-darkGray font-semibold mt-2">{el.productName}</h2>
 					<h3 className="text-darkGray font-normal text-xs ">{el.mainCategory}</h3>
@@ -73,7 +81,7 @@ const Products = () => {
 						View Product
 					</button>
 				</div>
-			</div>
+			</motion.div>
 		);
 	});
 
@@ -225,9 +233,8 @@ const Products = () => {
 					</select>
 				</div>
 			)}
-			<div className="w-full h-full flex flex-col md:flex-row md:flex-wrap justify-center items-center p-2">
-				{displayProducts}
-
+			<motion.div layout className="w-full h-full flex flex-col md:flex-row md:flex-wrap justify-center items-center p-2">
+				<AnimatePresence>{displayProducts}</AnimatePresence>
 				{/*products &&
 					products.map((el) => {
 						return (
@@ -243,7 +250,7 @@ const Products = () => {
 							</div>
 						);
 					})*/}
-			</div>
+			</motion.div>
 			{modal && displayModal(prodId)}
 			<div className="py-4">
 				<ReactPaginate

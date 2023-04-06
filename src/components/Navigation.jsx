@@ -45,7 +45,7 @@ const Navigation = () => {
 			<div
 				className={`absolute ${
 					mobileToggle ? 'left-0' : '-left-full'
-				}  top-20 h-56 w-full bg-stone-100 shadow-xl md:shadow-none md:bg-inherit md:h-full flex flex-col z-50 md:static md:flex-row md:w-6/12 justify-evenly items-center text-xs font-semibold text-stone-600 transition-all`}
+				}  top-20 h-56 w-full bg-stone-100 shadow-xl md:shadow-none md:bg-inherit md:h-full flex flex-col z-50 md:static md:flex-row md:w-6/12 justify-evenly items-center text-sm font-semibold text-stone-600 transition-all`}
 			>
 				{navItems.map((el) => {
 					return (

@@ -437,6 +437,42 @@ const finalData = [
 		subCategoryImg: `${casualImage}`,
 		productImg: `${casualImage}`,
 	},
+	{
+		id: 21,
+		mainCategory: 'STREETWEAR',
+		subCategory: 'Jackets',
+		productName: 'Leather Jacket',
+		article: 'TC-19',
+		subCategoryImg: `${casualImage}`,
+		productImg: `${casualImage}`,
+	},
+	{
+		id: 22,
+		mainCategory: 'STREETWEAR',
+		subCategory: 'Jackets',
+		productName: 'Leather Jacket',
+		article: 'TC-20',
+		subCategoryImg: `${casualImage}`,
+		productImg: `${casualImage}`,
+	},
+	{
+		id: 23,
+		mainCategory: 'STREETWEAR',
+		subCategory: 'Jackets',
+		productName: 'Leather Jacket',
+		article: 'TC-19',
+		subCategoryImg: `${casualImage}`,
+		productImg: `${casualImage}`,
+	},
+	{
+		id: 24,
+		mainCategory: 'STREETWEAR',
+		subCategory: 'Jackets',
+		productName: 'Leather Jacket',
+		article: 'TC-20',
+		subCategoryImg: `${casualImage}`,
+		productImg: `${casualImage}`,
+	},
 ];
 
 export default sliderItems;

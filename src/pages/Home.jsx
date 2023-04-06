@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaArrowCircleRight, FaAngleDown, FaAngleUp, FaEnvelopeOpen, FaWhatsapp, FaMapMarkerAlt, FaPlus } from 'react-icons/fa';
 import coverImg from './../images/cover.jpg';
 import imgOne from './../images/imgOne.jpg';
@@ -151,17 +151,27 @@ const contactCard = [
 const Home = () => {
 	// state for toggling FAQ accordian
 	const [open, setOpen] = useState(null);
+	//const [isLoading, setIsLoading] = useState(true);
 	const handleToggle = (i) => {
 		setOpen(open === i ? null : i);
 	};
+	/*
+	const handleLoading = () => {
+		setIsLoading(false);
+	};
 
+	useEffect(() => {
+		window.addEventListener('load', handleLoading);
+		return () => window.removeEventListener('load', handleLoading);
+	}, []);
+*/
 	return (
 		<div className=" bg-gray-100  h-full w-full overflow-hidden">
 			<div className="relative bg-gray-50">
 				<img src={cover} alt="" className="w-full h-screen shadow-sm object-cover" />
 				<div className=" absolute top-1/2 -translate-y-1/2 left-0 right-0  text-center font-semibold md:tracking-widest">
 					<div className="z-40">
-						<h2 className=" text-gray-100 bg-red-800 text-lg md:text-3xl md:my-2 md:py-2 font-semibold"> #1 CLOTHING MANUFACTURER</h2>
+						<h2 className=" text-gray-100 bg-red-800 text-lg md:text-3xl md:my-2 py-3 font-semibold"> #1 CLOTHING MANUFACTURER</h2>
 					</div>
 				</div>
 			</div>
@@ -268,7 +278,11 @@ const Home = () => {
 									className="my-8 md:w-82 w-64 h-64 mx-auto rounded-lg drop-shadow-lg md:m-3 md:flex md:flex-col md:justify-center md:items-center"
 								>
 									<div className="relative">
-										<img src={el.img} className=" h-full w-full object-cover object-center duration-300 cursor-pointer rounded-lg" />
+										<img
+											src={el.img}
+											className=" h-full w-full object-cover object-center duration-300 cursor-pointer rounded-lg"
+											loading="lazy"
+										/>
 
 										<div className="absolute backdrop-blur-md bg-white/30  bottom-0 right-0 left-0 flex justify-evenly w-full py-2 px-2 rounded-xl items-center cursor-pointer">
 											<div className="text-darkGray leading-4">
