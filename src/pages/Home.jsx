@@ -1,11 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { FaArrowCircleRight, FaAngleDown, FaAngleUp, FaEnvelopeOpen, FaWhatsapp, FaMapMarkerAlt, FaPlus } from 'react-icons/fa';
-import coverImg from './../images/cover.jpg';
-import imgOne from './../images/imgOne.jpg';
-import imgTwo from './../images/imgTwo.jpg';
-import imgThree from './../images/imgThree.jpg';
-import imgFour from './../images/imgFour.jpg';
-import imgFive from './../images/imgFive.jpg';
 import streetwearImg from './../images/streetwear.jpg';
 import activewearImg from './../images/activewear.jpg';
 import teamwearImg from './../images/teamwear.jpg';
@@ -20,6 +14,7 @@ import tshirt from './../assets/tshirt.svg';
 import quality from './../assets/quality.svg';
 import grow from './../assets/grow.svg';
 import cover from './../images/pentago_cover.jpg';
+import { motion } from 'framer-motion';
 
 const homeData = [
 	{
@@ -187,7 +182,13 @@ const Home = () => {
 			</div>
 
 			<div class=" h-full p-6 bg-red-800">
-				<div class="hide-card flex flex-col items-center justify-center text-center text-gray-100  px-3">
+				<motion.div
+					initial={{ opacity: 0, y: 100 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.9 }}
+					viewport={{ once: true }}
+					class="hide-card flex flex-col items-center justify-center text-center text-gray-100  px-3"
+				>
 					<h2 class="text-2xl font-semibold my-2">ABOUT OUR COMPANY</h2>
 
 					<p class="md:w-9/12">
@@ -205,7 +206,7 @@ const Home = () => {
 						</span>
 						<span class="font-semibold text-2xl ml-3">Grow your brand with Pentago</span>
 					</div>
-				</div>
+				</motion.div>
 				<div class=" h-full w-11/12 mx-auto bg-gray-100 py-8 text-center font-normal flex flex-col items-center justify-center rounded-xl shadow-xl md:flex-row md:justify-evenly z-30">
 					<div class="hide-card flex flex-col items-center justify-center pb-3 border-b-2 border-lightRed">
 						<span class="text-4xl mb-1">100+ </span>

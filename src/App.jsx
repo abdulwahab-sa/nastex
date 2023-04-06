@@ -1,16 +1,17 @@
 import './App.css';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import Home from './pages/Home';
-import { About } from './pages/About';
 import Customorder from './pages/Customorder';
 import { Contact } from './pages/Contact';
 import { ProductContext } from './context/ProductContext';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import axios from 'axios';
 import { useAuthContext } from './hooks/useAuthContext';
-import Products from './pages/Products';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
+// Lazy loading Components
+const Home = lazy(() => import('./pages/Home'));
+const Products = lazy(() => import('./pages/Products'));
+const About = lazy(() => import('./pages/About').then((module) => ({ default: module.About })));
 
 function App() {
 	const [data, setData] = useState([]);
@@ -38,13 +39,21 @@ function App() {
 				<div id="container">
 					<Navigation />
 					<div id="main-content">
-						<Routes>
-							<Route path="/" exact element={<Home />} />
-							<Route path="/products" element={<Products />} />
-							<Route path="/about" element={<About />} />
-							<Route path="/contact" element={<Contact />} />
-							<Route path="/customorder" element={<Customorder />} />
-						</Routes>
+						<Suspense
+							fallback={
+								<div id="loading">
+									<div class="loader"></div>
+								</div>
+							}
+						>
+							<Routes>
+								<Route path="/" exact element={<Home />} />
+								<Route path="/products" element={<Products />} />
+								<Route path="/about" element={<About />} />
+								<Route path="/contact" element={<Contact />} />
+								<Route path="/customorder" element={<Customorder />} />
+							</Routes>
+						</Suspense>
 					</div>
 					<Footer />
 				</div>
