@@ -15,7 +15,8 @@ const About = lazy(() => import('./pages/About').then((module) => ({ default: mo
 
 function App() {
 	const [data, setData] = useState([]);
-
+	{
+		/* 
 	const endPoint = 'https://tradecity.herokuapp.com/api/';
 	useEffect(() => {
 		fetchProducts();
@@ -32,7 +33,8 @@ function App() {
 		}
 	};
 	const { user } = useAuthContext();
-
+*/
+	}
 	return (
 		<BrowserRouter>
 			<ProductContext.Provider value={{ data }}>

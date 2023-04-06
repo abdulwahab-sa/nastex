@@ -122,24 +122,21 @@ const faq = [
 	},
 ];
 
-const contactCard = [
+const figures = [
 	{
 		id: 1,
-		logo: FaEnvelopeOpen,
-		title: 'EMAIL ADDRESS',
-		desc: 'info@pentagomfgcorp.com',
+		number: '100+',
+		title: 'Satisfied Customers',
 	},
 	{
 		id: 2,
-		logo: FaWhatsapp,
-		title: 'WHATSAPP',
-		desc: '(+92)3128230803',
+		number: '500+',
+		title: 'Orders Completed',
 	},
 	{
 		id: 3,
-		logo: FaMapMarkerAlt,
-		title: 'LOCATION',
-		desc: 'Sialkot, Pakistan',
+		number: '20000+',
+		title: 'Clothes Produced',
 	},
 ];
 
@@ -207,35 +204,26 @@ const Home = () => {
 						<span class="font-semibold text-2xl ml-3">Grow your brand with Pentago</span>
 					</div>
 				</motion.div>
-				<div class=" h-full w-11/12 mx-auto bg-gray-100 py-8 text-center font-normal flex flex-col items-center justify-center rounded-xl shadow-xl md:flex-row md:justify-evenly z-30">
-					<div class="hide-card flex flex-col items-center justify-center pb-3 border-b-2 border-lightRed">
-						<span class="text-4xl mb-1">100+ </span>
-						<span class="text-lg">
-							Satisfied <br />
-							Customers
-						</span>
-					</div>
-					<div class="hide-card flex flex-col items-center justify-center my-8 pb-3 border-b-2 border-lightRed">
-						<span class="text-4xl mb-1">500+ </span>
-						<span class="text-lg">
-							{' '}
-							Orders <br />
-							Completed
-						</span>
-					</div>
-					<div class="hide-card flex flex-col items-center justify-center pb-3 border-b-2 border-lightRed">
-						<span class="text-4xl mb-1">20000+ </span>
-						<span class="text-lg">
-							{' '}
-							Clothes <br />
-							Produced
-						</span>
-					</div>
+				<div class=" h-full w-11/12 mx-auto space-y-8 md:space-y-0 bg-gray-100 py-8 md:py-16 text-center font-normal flex flex-col items-center justify-center rounded-xl shadow-xl md:flex-row md:justify-evenly z-30">
+					{figures.map((el) => {
+						return (
+							<motion.div
+								key={el.id}
+								class="hide-card flex flex-col items-center justify-center pb-3 border-b-2 border-lightRed"
+								initial={{ opacity: 0 }}
+								whileInView={{ opacity: 1 }}
+								transition={{ duration: 0.9 }}
+								viewport={{ once: true }}
+							>
+								<span class="text-4xl mb-1">{el.number} </span>
+								<span class="text-lg">{el.title}</span>
+							</motion.div>
+						);
+					})}
 				</div>
 			</div>
 
 			<div className="relative mx-auto flex flex-col justify-center px-4  bg-gray-50">
-				<div className="absolute h-20 w-20 top-1/4 -left-10  bg-darkRed rounded-xl opacity-20 rotate-45  "></div>
 				<span className=" my-8 text-2xl font-semibold md:text-center">
 					{' '}
 					<span className="text-darkGray">Looking for the Best Manufacturer?</span> <br />{' '}
@@ -244,9 +232,13 @@ const Home = () => {
 				<div className="md:flex md:flex-wrap w-full h-full justify-center z-30 ">
 					{homeData.map((el) => {
 						return (
-							<div
-								className="mx-auto mt-4 flex justify-center items-start w-full p-3 md:w-72 md:m-6  md:border-0 md:rounded-lg md:shadow-md md:shadow-stone-700/20"
+							<motion.div
+								className="mx-auto mt-4 flex justify-center items-start w-full p-3 md:w-80 md:py-6 md:m-6  md:border-0 md:rounded-lg md:shadow-md md:shadow-stone-700/20"
 								key={el.id}
+								initial={{ opacity: 0, y: 100 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 1 }}
+								viewport={{ once: true }}
 							>
 								<div class="relative mr-1">
 									<img src={el.img} alt="" class="h-7 w-7 z-30" />
@@ -259,7 +251,7 @@ const Home = () => {
 										<span className="text-darkGray"> {el.desc} </span>{' '}
 									</p>
 								</div>
-							</div>
+							</motion.div>
 						);
 					})}
 				</div>
@@ -274,9 +266,13 @@ const Home = () => {
 					<div className="md:flex md:flex-wrap justify-center">
 						{categoryData.map((el) => {
 							return (
-								<div
+								<motion.div
 									key={el.id}
-									className="my-8 md:w-82 w-64 h-64 mx-auto rounded-lg drop-shadow-lg md:m-3 md:flex md:flex-col md:justify-center md:items-center"
+									className="my-8 w-64 h-64 md:w-80 md:h-80 mx-auto rounded-lg drop-shadow-lg md:m-3 md:flex md:flex-col md:justify-center md:items-center"
+									initial={{ opacity: 0, y: 100 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									transition={{ duration: 1 }}
+									viewport={{ once: true }}
 								>
 									<div className="relative">
 										<img
@@ -296,7 +292,7 @@ const Home = () => {
 											</span>
 										</div>
 									</div>
-								</div>
+								</motion.div>
 							);
 						})}
 					</div>
@@ -309,7 +305,7 @@ const Home = () => {
 						Like what you see? <br /> Get in touch and place an order!{' '}
 					</span>{' '}
 					<br />{' '}
-					<button className="bg-lightRed text-gray-100 py-2 px-4 my-6 rounded-full text-sm hover:bg-red-700 transition-all duration-300 cursor-pointer">
+					<button className="bg-lightRed text-gray-100 py-3 px-6 my-6 rounded-full text-sm font-semibold hover:bg-red-800 transition-all duration-300 cursor-pointer">
 						Order Sample
 					</button>
 				</div>
@@ -344,17 +340,17 @@ const Home = () => {
 				{faq.map((el) => {
 					return (
 						<div
-							className="z-30 h-full  px-4 py-4 my-3 border-b border-gray-300 md:w-7/12 md:mx-auto"
+							className="z-30 h-full px-4 py-4 my-3 border-b border-gray-300 md:w-7/12 md:mx-auto"
 							key={el.id}
 							onClick={() => handleToggle(el.id)}
 						>
-							<div className="h-3 text-sm font-medium flex flex-col items-center justify-center ">
-								<div className={`w-full flex justify-between items-center text-sm font-medium text-darkGray}`}>
+							<div className="h-3 text-sm md:text-md font-medium flex flex-col items-center justify-center ">
+								<div className={`w-full flex justify-between items-center text-darkGray}`}>
 									<p className="">{el.question} </p>
-									<span className="text-md font-bold ">{open === el.id ? <FaAngleUp /> : <FaAngleDown />}</span>
+									<span className=" font-bold ">{open === el.id ? <FaAngleUp /> : <FaAngleDown />}</span>
 								</div>
 							</div>
-							<p className={`mt-8 py-3 text-darkGray text-xs  ${open === el.id ? 'block' : 'hidden'}`}>{el.answer}</p>
+							<p className={`mt-8 py-3 text-darkGray text-sm md:text-md  ${open === el.id ? 'block' : 'hidden'}`}>{el.answer}</p>
 						</div>
 					);
 				})}

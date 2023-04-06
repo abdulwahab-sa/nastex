@@ -44,44 +44,44 @@ export const Contact = () => {
 		},
 	];
 	return (
-		<div className=" my-14 w-full h-full text-darkGray overflow-hidden">
-			<div className=" px-4 md:px-16 flex flex-col items-center md:flex-row md:justify-evenly">
+		<div className=" my-20 w-full h-full text-darkGray overflow-hidden">
+			<div className=" px-4 md:px-10 flex flex-col items-center md:flex-row md:justify-evenly">
 				<div className=" md:w-1/2">
-					<h2 className="text-xl md:text-2xl font-semibold">Get in Touch with us</h2>
+					<h2 className="text-xl md:text-3xl font-semibold">Get in Touch with us</h2>
 					<p className="text-sm md:text-md mt-1">
 						You can get in touch on our email or via phone. Or you can fill out our contact form and our team will reach out to you.
 					</p>
 					{contactDetail.map((el) => {
 						return (
 							<div className="mt-6 flex items-center " key={el.id}>
-								<div className="bg-red-800 text-gray-50 w-12 h-10 md:w-10 md:h-8 p-3 rounded-lg flex justify-center items-center">
+								<div className="bg-red-800 text-gray-50 w-12 h-10 md:w-14 md:h-12 p-3 rounded-lg flex justify-center items-center">
 									<el.icon className="text-2xl" />
 								</div>
 								<div className="ml-6 ">
-									<h2 className="text-sm font-semibold">{el.title}</h2>
-									<span className="text-xs font-medium text-gray-600">{el.detail}</span>
+									<h2 className="text-sm md:text-lg font-semibold">{el.title}</h2>
+									<span className="text-xs md:text-lg font-medium text-gray-600">{el.detail}</span>
 								</div>
 							</div>
 						);
 					})}
 				</div>
-				<div className="bg-red-800 p-6 rounded-md mt-10 md:m-0 w-10/12 md:w-2/5 max-w-xs shadow-md">
+				<div className="bg-red-800 p-6 rounded-md mt-10 md:m-0 w-10/12 md:w-2/5 max-w-sm shadow-md">
 					<form onSubmit={handleSubmit(onSubmit)} className="relative">
 						<div className="relative  my-2">
-							<MdPerson className="text-stone-500 absolute text-xs z-20 inset-2 " />
+							<MdPerson className="text-stone-500 absolute text-md z-20 inset-3 " />
 							<input
 								type="text"
-								className=" w-full py-2 px-8 text-xs font-light bg-stone-100 rounded-sm focus:drop-shadow-lg outline-0"
+								className=" w-full py-3 px-9 text-xs font-light bg-stone-100 rounded-sm focus:drop-shadow-lg outline-0"
 								placeholder="Enter your name"
 								{...register('fullName')}
 							/>
 							{errors.fullName && <MdErrorOutline className="text-lightRed absolute text-md z-20 top-2 -right-5 " />}
 						</div>
 						<div className="relative  my-2">
-							<MdEmail className="text-stone-500 absolute z-20 text-xs inset-2" />
+							<MdEmail className="text-stone-500 absolute z-20 text-md inset-3" />
 							<input
 								type="email"
-								className="w-full py-2 px-8 text-xs font-light bg-stone-100 rounded-sm focus:drop-shadow-lg outline-0"
+								className="w-full py-3 px-9 text-xs font-light bg-stone-100 rounded-sm focus:drop-shadow-lg outline-0"
 								placeholder="Enter your email"
 								{...register('email')}
 							/>
@@ -89,11 +89,11 @@ export const Contact = () => {
 						</div>
 
 						<div className="relative  my-2">
-							<MdMessage className="text-stone-500 absolute z-20 text-xs inset-2" />
+							<MdMessage className="text-stone-500 absolute z-20 text-md inset-3" />
 							<textarea
 								cols="30"
 								rows="4"
-								className="w-full py-2 px-8 text-xs font-light bg-stone-100 rounded-sm focus:drop-shadow-lg outline-0"
+								className="w-full py-3 px-9 text-xs font-light bg-stone-100 rounded-sm focus:drop-shadow-lg outline-0"
 								placeholder="Enter your order details"
 								{...register('message')}
 							></textarea>
