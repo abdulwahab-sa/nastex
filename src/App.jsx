@@ -1,9 +1,9 @@
 import './App.css';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Customorder from './pages/Customorder';
 import { Contact } from './pages/Contact';
 import { ProductContext } from './context/ProductContext';
-import { useState, useEffect, lazy, Suspense } from 'react';
+import { useState, useEffect, lazy, Suspense, useLayoutEffect } from 'react';
 import axios from 'axios';
 import { useAuthContext } from './hooks/useAuthContext';
 import Navigation from './components/Navigation';
@@ -12,6 +12,14 @@ import Footer from './components/Footer';
 const Home = lazy(() => import('./pages/Home'));
 const Products = lazy(() => import('./pages/Products'));
 const About = lazy(() => import('./pages/About').then((module) => ({ default: module.About })));
+
+const ScrollToTop = ({ children }) => {
+	const { pathname } = useLocation();
+	useLayoutEffect(() => {
+		window.scrollTo(0, 0);
+	}, [pathname]);
+	return children;
+};
 
 function App() {
 	const [data, setData] = useState([]);
@@ -35,6 +43,7 @@ function App() {
 	const { user } = useAuthContext();
 */
 	}
+
 	return (
 		<BrowserRouter>
 			<ProductContext.Provider value={{ data }}>
@@ -48,13 +57,15 @@ function App() {
 								</div>
 							}
 						>
-							<Routes>
-								<Route path="/" exact element={<Home />} />
-								<Route path="/products" element={<Products />} />
-								<Route path="/about" element={<About />} />
-								<Route path="/contact" element={<Contact />} />
-								<Route path="/customorder" element={<Customorder />} />
-							</Routes>
+							<ScrollToTop>
+								<Routes>
+									<Route path="/" exact element={<Home />} />
+									<Route path="/products" element={<Products />} />
+									<Route path="/about" element={<About />} />
+									<Route path="/contact" element={<Contact />} />
+									<Route path="/customorder" element={<Customorder />} />
+								</Routes>
+							</ScrollToTop>
 						</Suspense>
 					</div>
 					<Footer />

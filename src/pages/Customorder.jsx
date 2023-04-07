@@ -99,7 +99,7 @@ const Customorder = () => {
 						<input
 							type="submit"
 							value="Send Inquiry"
-							className="cursor-pointer text-sm font-semibold my-3 bg-red-400 text-neutral-50 p-3 rounded-md hover:bg-red-500 transition-all z-40"
+							className="cursor-pointer text-sm font-semibold my-3 bg-red-500 text-neutral-50 p-3 rounded-md hover:bg-red-700 transition-all z-40"
 						/>
 					</form>
 				</div>

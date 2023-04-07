@@ -37,7 +37,7 @@ const Navigation = () => {
 	return (
 		<div className="w-full h-full  py-3 flex justify-between items-center relative">
 			<div className="px-3 md:p-0 flex justify-center w-1/5">
-				<img src={logo} alt="" className="h-12" />
+				<img src={logo} alt="" className="h-12 md:h-14" />
 			</div>
 			<div className="flex justify-center px-3 md:hidden text-3xl text-darkGray">
 				<span onClick={() => setMobileToggle(!mobileToggle)}>{mobileToggle ? <MdNotes /> : <MdDehaze />}</span>

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
-import { useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FaFilter, FaAngleLeft } from 'react-icons/fa';
 import imgFour from './../images/imgFour.jpg';
-import img from './../images/russel.jpg';
+
 import { allProducts, finalData } from '../data';
-import streetwearimg from './../images/streetwear.jpg';
+
 import { motion, AnimatePresence } from 'framer-motion';
 
 const categories = [
@@ -91,32 +91,31 @@ const Products = () => {
 
 		return (
 			<div className="fixed bg-darkGray bg-opacity-60 w-full inset-0  flex flex-col justify-start items-center">
-				<div className=" overflow-y-scroll md:overflow-y-hidden md:h-96 w-72 md:w-3/5 md:my-auto bg-opacity-100 text-darkGray border border-stone-300 bg-neutral-100 shadow-2xl">
+				<div className=" overflow-y-scroll md:overflow-y-hidden w-72 md:w-3/5 md:my-auto bg-opacity-100 text-darkGray border border-stone-300 bg-neutral-100 shadow-2xl">
 					<div
 						className=" flex items-center justify-start py-4 px-2 cursor-pointer border-b border-stone-300"
 						onClick={() => setModal(!modal)}
 					>
 						<FaAngleLeft />
-						<span className="text-xs font-medium mx-2"> BACK TO ALL PRODUCTS</span>
+						<span className="text-xs md:text-sm font-medium mx-2 hover:text-lightRed transition-all"> BACK TO ALL PRODUCTS</span>
 					</div>
-					<div className="md:flex md:w-full md:h-80 ">
-						<img src={productData.productImg} alt="" className=" w-full h-72 md:w-1/2 object-cover object-center " />
-						<div className="h-full p-3 md:overflow-y-auto bg-gray-50">
-							<h2 className="font-semibold text-xl"> {productData.productName} </h2>
-							<h3 className="font-medium text-sm"> {productData.mainCategory}</h3>
-							<h6 className="text-xs font-medium mt-2"> {productData.article}</h6>
-							<p className="my-2 text-sm md:text-xs md:my-4">
+					<div className="md:flex">
+						<img src={productData.productImg} alt="" className=" w-full h-72 md:w-1/2 md:h-screen object-cover object-center " />
+						<div className="h-full p-3 md:overflow-y-auto">
+							<h2 className="font-semibold text-xl md:text-2xl"> {productData.productName} </h2>
+							<h3 className="font-medium text-sm md:text-base"> {productData.mainCategory}</h3>
+							<h6 className="text-xs font-medium mt-2 md:text-base"> {productData.article}</h6>
+							<p className="my-2 text-sm md:text-base md:my-6">
 								{' '}
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 								Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 							</p>
-							<button
-								className="py-3 px-2 mt-2 text-xs md:py-2 md:px-2 border border-gray-300 font-semibold text-darkGray rounded-md hover:bg-stone-300 transition-all"
-								onClick={() => setModal(!modal)}
-							>
-								{' '}
-								SEND INQUIRY{' '}
-							</button>
+							<Link to="/customorder">
+								<button className="py-3 px-2 mt-2 text-sm md:p-3 border border-gray-300 font-semibold text-darkGray rounded-md hover:bg-stone-300 transition-all">
+									{' '}
+									SEND INQUIRY{' '}
+								</button>
+							</Link>
 						</div>
 					</div>
 				</div>
@@ -235,21 +234,6 @@ const Products = () => {
 			)}
 			<motion.div layout className="w-full h-full flex flex-col md:flex-row md:flex-wrap justify-center items-center p-2">
 				<AnimatePresence>{displayProducts}</AnimatePresence>
-				{/*products &&
-					products.map((el) => {
-						return (
-							<div className="h-full w-56 bg-neutral-100 shadow-lg mx-auto m-4 p-2 rounded-lg" key={el.id}>
-								<img src={el.productImg} alt="" className="h-40 w-full object-cover object-center rounded-lg" />
-								<div className="h-full">
-									<h2 className="text-darkGray font-semibold mt-2">{el.productName}</h2>
-									<h3 className="text-darkGray font-normal text-xs ">{el.mainCategory}</h3>
-									<button className="w-full py-2 mt-2  font-semibold text-gray-50 bg-lightRed rounded-xl hover:bg-red-800 transition-all">
-										View Product
-									</button>
-								</div>
-							</div>
-						);
-					})*/}
 			</motion.div>
 			{modal && displayModal(prodId)}
 			<div className="py-4">
@@ -265,32 +249,6 @@ const Products = () => {
 					activeClassName={'paginationActive'}
 				/>
 			</div>
-
-			{/*
-			<div className="h-full w-72 md:w-3/5 md:mb-3 text-darkGray mx-auto border border-stone-300 bg-neutral-100 shadow-2xl">
-				<div className=" flex items-center justify-start py-4 px-2 cursor-pointer border-b border-stone-300">
-					<FaAngleLeft />
-					<span className="text-xs font-medium mx-2"> BACK TO ALL PRODUCTS</span>
-				</div>
-				<div className="md:flex md:w-full md:h-72">
-					<img src={streetwearimg} alt="" className=" w-full h-72 md:h-full  md:w-1/2 object-cover object-center " />
-					<div className="h-full p-3 md:overflow-y-auto">
-						<h2 className="font-semibold text-xl"> Pullover Hoodie </h2>
-						<h3 className="font-medium text-sm"> STREETWEAR</h3>
-						<h6 className="text-xs font-medium mt-2"> Article # 01 </h6>
-						<p className="my-2 text-sm md:text-xs md:my-4">
-							{' '}
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-							enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-						</p>
-						<button className="py-3 px-2 mt-2 text-xs md:py-2 md:px-2 border border-gray-300 font-semibold text-darkGray rounded-md hover:bg-stone-300 transition-all">
-							{' '}
-							SEND INQUIRY{' '}
-						</button>
-					</div>
-				</div>
-			</div>
-		*/}
 		</div>
 	);
 };

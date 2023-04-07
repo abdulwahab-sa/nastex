@@ -76,25 +76,49 @@ export const About = () => {
 					</p>
 				</motion.div>
 			</div>
-			<div className="flex flex-col items-center">
-				<h2 className=" text-2xl md:text-3xl text-darkGray font-medium">
+			<motion.div
+				initial={{ opacity: 0, y: 100 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				transition={{ delay: 0.5 }}
+				viewport={{ once: true }}
+				className="flex flex-col items-center"
+			>
+				<motion.h2
+					initial={{ opacity: 0, y: 100 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ delay: 0.7 }}
+					viewport={{ once: true }}
+					className=" text-2xl md:text-3xl text-darkGray font-medium"
+				>
 					Message from <span className="text-darkRed">CEO</span>
-				</h2>
+				</motion.h2>
 
-				<div className="md:w-1/2 w-full flex flex-col items-center">
+				<motion.div
+					initial={{ opacity: 0, y: 100 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ delay: 0.9 }}
+					viewport={{ once: true }}
+					className="md:w-1/2 w-full flex flex-col items-center"
+				>
 					<img src={ceo} alt="" className="w-40 h-40 object-cover object-top rounded-full mt-8 mb-2" />
 					<h2 className="font-medium text-md md:text-lg text-center">Aistam Nasrullah</h2>
 					<h2 className="text-md">
 						Founder & CEO, <span className="text-darkRed font-semibold"> Pentago Mfg </span>
 					</h2>
-				</div>
-				<p className="md:w-1/2 w-10/12 text-sm md:text-lg mt-3 mb-8">
+				</motion.div>
+				<motion.p
+					initial={{ opacity: 0, y: 100 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ delay: 1.1 }}
+					viewport={{ once: true }}
+					className="md:w-1/2 w-10/12 text-sm md:text-lg mt-3 mb-8"
+				>
 					"Our mission at Pentago is to design, produce and distribute high-quality clothing that not only meets the needs and preferences
 					of our customers, but also reflects our commitment to sustainability and innovation. We strive to create a positive impact on the
 					environment and society, by implementing eco-friendly and ethical manufacturing practices, supporting fair labor standards, and
 					giving back to the communities we serve."
-				</p>
-			</div>
+				</motion.p>
+			</motion.div>
 		</div>
 	);
 };

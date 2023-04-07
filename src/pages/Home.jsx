@@ -210,8 +210,8 @@ const Home = () => {
 							<motion.div
 								key={el.id}
 								class="hide-card flex flex-col items-center justify-center pb-3 border-b-2 border-lightRed"
-								initial={{ opacity: 0 }}
-								whileInView={{ opacity: 1 }}
+								initial={{ opacity: 0, y: 100 }}
+								whileInView={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.9 }}
 								viewport={{ once: true }}
 							>
@@ -224,11 +224,17 @@ const Home = () => {
 			</div>
 
 			<div className="relative mx-auto flex flex-col justify-center px-4  bg-gray-50">
-				<span className=" my-8 text-2xl font-semibold md:text-center">
+				<motion.span
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1 }}
+					transition={{ duration: 1.4 }}
+					viewport={{ once: true }}
+					className=" my-8 text-2xl font-semibold md:text-center"
+				>
 					{' '}
 					<span className="text-darkGray">Looking for the Best Manufacturer?</span> <br />{' '}
 					<span className="text-lightRed"> Here's how we can help.</span>{' '}
-				</span>
+				</motion.span>
 				<div className="md:flex md:flex-wrap w-full h-full justify-center z-30 ">
 					{homeData.map((el) => {
 						return (
@@ -259,10 +265,16 @@ const Home = () => {
 
 			<div>
 				<div className="relative h-full w-full flex flex-col bg-gray-50  py-8 ">
-					<span className="my-8 px-4 md:text-center text-2xl font-semibold lg:text-3xl">
+					<motion.span
+						initial={{ opacity: 0 }}
+						whileInView={{ opacity: 1 }}
+						transition={{ duration: 1.4 }}
+						viewport={{ once: true }}
+						className="my-8 px-4 md:text-center text-2xl font-semibold lg:text-3xl"
+					>
 						{' '}
 						<span className="text-darkGray"> Our Products range </span> <br /> <span className="text-lightRed"> shows our diversity</span>{' '}
-					</span>
+					</motion.span>
 					<div className="md:flex md:flex-wrap justify-center">
 						{categoryData.map((el) => {
 							return (
@@ -298,7 +310,13 @@ const Home = () => {
 					</div>
 				</div>
 
-				<div className=" bg-gray-50 text-center font-semibold py-8">
+				<motion.div
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1 }}
+					transition={{ duration: 1.4 }}
+					viewport={{ once: true }}
+					className=" bg-gray-50 text-center font-semibold py-8"
+				>
 					{' '}
 					<span className="text-darkGray text-lg md:text-xl">
 						{' '}
@@ -308,39 +326,61 @@ const Home = () => {
 					<button className="bg-lightRed text-gray-100 py-3 px-6 my-6 rounded-full text-sm font-semibold hover:bg-red-800 transition-all duration-300 cursor-pointer">
 						Order Sample
 					</button>
-				</div>
+				</motion.div>
 			</div>
 
 			<div className=" relative h-full w-full flex flex-col bg-gray-50">
-				<span className="my-2 px-4 text-2xl font-semibold lg:text-3xl md:text-center z-30">
+				<motion.span
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1 }}
+					transition={{ duration: 1.4 }}
+					viewport={{ once: true }}
+					className="my-2 px-4 text-2xl font-semibold lg:text-3xl md:text-center z-30"
+				>
 					{' '}
 					<span className="text-darkGray">Interesting Facts</span> <br /> <span className="text-lightRed"> about Pentago</span>{' '}
-				</span>
+				</motion.span>
 				<div className="md:flex md:flex-wrap w-full h-full justify-center items-center">
 					{facts.map((el) => {
 						return (
-							<div className="w-full border-b  border-gray-200 md:border-0 flex flex-col justify-center items-center my-3 py-4 md:w-56 md:m-4">
+							<motion.div
+								initial={{ opacity: 0, y: 100 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 1 }}
+								viewport={{ once: true }}
+								className="w-full border-b  border-gray-200 md:border-0 flex flex-col justify-center items-center my-3 py-4 md:w-56 md:m-4"
+							>
 								<img src={el.img} className="red w-8 mb-3" />
 								<div className="text-darkGray text-lg font-semibold flex flex-col w-full text-center leading-5">
 									<span>
 										{el.firstHeading} <br /> {el.secHeading}
 									</span>
 								</div>
-							</div>
+							</motion.div>
 						);
 					})}
 				</div>
 			</div>
 
 			<div className="relative h-full w-full flex flex-col bg-gray-50 py-8 px-2">
-				<span className="px-4 my-4 text-2xl font-semibold lg:text-3xl md:text-center">
+				<motion.span
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1 }}
+					transition={{ duration: 1.4 }}
+					viewport={{ once: true }}
+					className="px-4 my-4 text-2xl font-semibold lg:text-3xl md:text-center"
+				>
 					{' '}
 					<span className="text-darkGray">Frequently Asked</span> <br /> <span className="text-lightRed"> Questions (FAQ)</span>{' '}
-				</span>
+				</motion.span>
 				{faq.map((el) => {
 					return (
-						<div
-							className="z-30 h-full px-4 py-4 my-3 border-b border-gray-300 md:w-7/12 md:mx-auto"
+						<motion.div
+							initial={{ opacity: 0 }}
+							whileInView={{ opacity: 1 }}
+							transition={{ duration: 1.4 }}
+							viewport={{ once: true }}
+							className="z-30 h-full px-4 py-4 my-3 border-y border-gray-200 border-x-4 border-x-red-600 md:w-7/12 md:mx-auto"
 							key={el.id}
 							onClick={() => handleToggle(el.id)}
 						>
@@ -351,7 +391,7 @@ const Home = () => {
 								</div>
 							</div>
 							<p className={`mt-8 py-3 text-darkGray text-sm md:text-md  ${open === el.id ? 'block' : 'hidden'}`}>{el.answer}</p>
-						</div>
+						</motion.div>
 					);
 				})}
 			</div>
