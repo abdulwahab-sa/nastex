@@ -569,8 +569,8 @@ const finalData = [
 		subCategory: 'Fitness Shorts',
 		productName: 'Gym Shorts',
 		article: 'P-FS-03',
-		subCategoryImg: `https://res.cloudinary.com/dpw1bckje/image/upload/v1690183757/pentago/fitness-shorts/fitness-shorts-p11_diedik.png`,
-		productImg: `${casualImage}`,
+		productImg: `https://res.cloudinary.com/dpw1bckje/image/upload/v1690183757/pentago/fitness-shorts/fitness-shorts-p11_diedik.png`,
+		subCategoryImg: `${casualImage}`,
 	},
 	{
 		id: 35,
@@ -578,8 +578,8 @@ const finalData = [
 		subCategory: 'Fitness Shorts',
 		productName: 'Fitness Shorts',
 		article: 'P-FS-04',
-		subCategoryImg: `https://res.cloudinary.com/dpw1bckje/image/upload/v1690183756/pentago/fitness-shorts/fitness-shorts-p15_bfks28.jpg`,
-		productImg: `${casualImage}`,
+		productImg: `https://res.cloudinary.com/dpw1bckje/image/upload/v1690183756/pentago/fitness-shorts/fitness-shorts-p15_bfks28.jpg`,
+		subCategoryImg: `${casualImage}`,
 	},
 	{
 		id: 36,
@@ -587,8 +587,8 @@ const finalData = [
 		subCategory: 'Fitness Shorts',
 		productName: 'Women Shorts',
 		article: 'P-FS-05',
-		subCategoryImg: `https://res.cloudinary.com/dpw1bckje/image/upload/v1690183757/pentago/fitness-shorts/fitness-shorts-p1_lpqnhm.jpg`,
-		productImg: `${casualImage}`,
+		productImg: `https://res.cloudinary.com/dpw1bckje/image/upload/v1690183757/pentago/fitness-shorts/fitness-shorts-p1_lpqnhm.jpg`,
+		subCategoryImg: `${casualImage}`,
 	},
 	{
 		id: 37,

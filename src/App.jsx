@@ -4,8 +4,6 @@ import Customorder from './pages/Customorder';
 import { Contact } from './pages/Contact';
 import { ProductContext } from './context/ProductContext';
 import { useState, useEffect, lazy, Suspense, useLayoutEffect } from 'react';
-import axios from 'axios';
-import { useAuthContext } from './hooks/useAuthContext';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 // Lazy loading Components
