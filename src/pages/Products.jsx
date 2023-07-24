@@ -107,8 +107,9 @@ const Products = () => {
 							<h6 className="text-xs font-medium mt-2 md:text-base"> {productData.article}</h6>
 							<p className="my-2 text-sm md:text-base md:my-6">
 								{' '}
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-								Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+								Discover the perfect fusion of style and comfort with our versatile collection of casual wear and activewear. Embrace every
+								moment with confidence, as our meticulously crafted garments boast premium quality materials and a seamless blend of
+								fashion-forward designs. Elevate your wardrobe and embrace an unparalleled experience in clothing excellence.
 							</p>
 							<Link to="/customorder">
 								<button className="py-3 px-2 mt-2 text-sm md:p-3 border border-gray-300 font-semibold text-darkGray rounded-md hover:bg-stone-300 transition-all">
