@@ -15,6 +15,7 @@ import quality from './../assets/quality.svg';
 import grow from './../assets/grow.svg';
 import cover from './../images/pentago_cover.jpg';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const homeData = [
 	{
@@ -74,7 +75,7 @@ const facts = [
 	{
 		id: 1,
 		img: cart,
-		firstHeading: '30',
+		firstHeading: '50',
 		secHeading: 'MOQ',
 	},
 	{
@@ -167,7 +168,7 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-			<div className="hidden bg-gray-50 pt-10 text-center flex flex-col">
+			<div className="hidden bg-gray-50 pt-10 text-center  flex-col">
 				<span className=" text-xl md:text-2xl font-semibold">
 					{' '}
 					Casual, Fitness, Sports Apparels & many more <span className="text-2xl text-lightRed">+</span>{' '}
@@ -278,33 +279,35 @@ const Home = () => {
 					<div className="md:flex md:flex-wrap justify-center">
 						{categoryData.map((el) => {
 							return (
-								<motion.div
-									key={el.id}
-									className="my-8 w-64 h-64 md:w-80 md:h-80 mx-auto rounded-lg drop-shadow-lg md:m-3 md:flex md:flex-col md:justify-center md:items-center"
-									initial={{ opacity: 0, y: 100 }}
-									whileInView={{ opacity: 1, y: 0 }}
-									transition={{ duration: 1 }}
-									viewport={{ once: true }}
-								>
-									<div className="relative">
-										<img
-											src={el.img}
-											className=" h-full w-full object-cover object-center duration-300 cursor-pointer rounded-lg"
-											loading="lazy"
-										/>
+								<Link to="/products">
+									<motion.div
+										key={el.id}
+										className="my-8 w-64 h-64 md:w-80 md:h-80 mx-auto rounded-lg drop-shadow-lg md:m-3 md:flex md:flex-col md:justify-center md:items-center"
+										initial={{ opacity: 0, y: 100 }}
+										whileInView={{ opacity: 1, y: 0 }}
+										transition={{ duration: 1 }}
+										viewport={{ once: true }}
+									>
+										<div className="relative">
+											<img
+												src={el.img}
+												className=" h-full w-full object-cover object-center duration-300 cursor-pointer rounded-lg"
+												loading="lazy"
+											/>
 
-										<div className="absolute backdrop-blur-md bg-white/30  bottom-0 right-0 left-0 flex justify-evenly w-full py-2 px-2 rounded-xl items-center cursor-pointer">
-											<div className="text-darkGray leading-4">
-												<h2 className="text-md font-semibold md:text-md lg:text-lg">{el.title}</h2>
-												<span className="text-xs md:text-sm">{el.tagline}</span>
+											<div className="absolute backdrop-blur-md bg-white/30  bottom-0 right-0 left-0 flex justify-evenly w-full py-2 px-2 rounded-xl items-center cursor-pointer">
+												<div className="text-darkGray leading-4">
+													<h2 className="text-md font-semibold md:text-md lg:text-lg">{el.title}</h2>
+													<span className="text-xs md:text-sm">{el.tagline}</span>
+												</div>
+												<span className="text-lightRed text-lg md:text-xl">
+													{' '}
+													<FaArrowCircleRight />{' '}
+												</span>
 											</div>
-											<span className="text-lightRed text-lg md:text-xl">
-												{' '}
-												<FaArrowCircleRight />{' '}
-											</span>
 										</div>
-									</div>
-								</motion.div>
+									</motion.div>
+								</Link>
 							);
 						})}
 					</div>
@@ -371,7 +374,16 @@ const Home = () => {
 					className="px-4 my-4 text-2xl font-semibold lg:text-3xl md:text-center"
 				>
 					{' '}
-					<span className="text-darkGray">Frequently Asked</span> <br /> <span className="text-lightRed"> Questions (FAQ)</span>{' '}
+					<motion.span
+						initial={{ opacity: 0 }}
+						whileInView={{ opacity: 1 }}
+						transition={{ duration: 1 }}
+						viewport={{ once: true }}
+						className="text-darkGray"
+					>
+						Frequently Asked
+					</motion.span>{' '}
+					<br /> <span className="text-lightRed"> Questions (FAQ)</span>{' '}
 				</motion.span>
 				{faq.map((el) => {
 					return (

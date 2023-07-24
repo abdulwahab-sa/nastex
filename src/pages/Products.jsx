@@ -4,18 +4,18 @@ import { Link } from 'react-router-dom';
 import { FaFilter, FaAngleLeft } from 'react-icons/fa';
 import imgFour from './../images/imgFour.jpg';
 
-import { allProducts, finalData } from '../data';
+import { finalData } from '../data';
 
 import { motion, AnimatePresence } from 'framer-motion';
 
 const categories = [
 	{
 		id: 1,
-		title: 'STREETWEAR',
+		title: 'CASUALWEAR',
 	},
 	{
 		id: 2,
-		title: 'CASUALWEAR',
+		title: 'ACTIVEWEAR',
 	},
 	{
 		id: 3,

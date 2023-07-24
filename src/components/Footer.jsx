@@ -12,7 +12,7 @@ const contact = [
 	{
 		id: 2,
 		icon: MdPhoneEnabled,
-		statement: '(92)312-8230803',
+		statement: '(92)316-7133715',
 	},
 	{
 		id: 3,

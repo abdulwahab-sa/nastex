@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { MdPerson, MdEmail, MdPhone, MdShoppingCart, MdMessage, MdErrorOutline } from 'react-icons/md';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import emailjs from '@emailjs/browser';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Customorder = () => {
 	// React Hook form in combination with Yup for validation schema
@@ -15,6 +18,8 @@ const Customorder = () => {
 		orderDetail: yup.string().required(),
 	});
 
+	const formRef = useRef();
+
 	const {
 		register,
 		handleSubmit,
@@ -24,11 +29,30 @@ const Customorder = () => {
 	});
 
 	const onSubmit = (data) => {
-		console.log(data);
+		emailjs.sendForm('service_hdv0oa6', 'template_nilj2st', formRef.current, 'Pp6OX7szD7ZRI4tHH').then(
+			(result) => {
+				toast.success('Inquiry has been sent successfully');
+			},
+			(error) => {
+				toast.error('Please try again later');
+			}
+		);
 	};
 
 	return (
 		<div className="w-full h-full mt-14 p-2 overflow-hidden">
+			<ToastContainer
+				position="top-right"
+				autoClose={5000}
+				hideProgressBar={false}
+				newestOnTop={false}
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+				theme="light"
+			/>
 			<div className=" relative text-darkGray text-center my-6  mx-auto w-11/12 md:max-w-xl ">
 				<div className="absolute inset-0 w-72 h-72 bg-lightRed rounded-full mix-blend-multiply filter blur-xl opacity-10 "></div>
 				<div className="absolute bottom-0 right-0 w-72 h-72 bg-lightRed rounded-full mix-blend-multiply filter blur-xl opacity-10 "></div>
@@ -40,7 +64,7 @@ const Customorder = () => {
 				</h2>
 				<span className="text-sm md:text-lg">We want to hear from you. Let us know how we can help.</span>
 				<div className="relative mt-2 flex flex-col justify-center items-center w-full py-10">
-					<form onSubmit={handleSubmit(onSubmit)} className="relative md:w-8/12">
+					<form ref={formRef} onSubmit={handleSubmit(onSubmit)} className="relative md:w-8/12">
 						<div className="absolute h-16 w-16 left-12 bottom-0 bg-darkRed rounded-xl opacity-10 rotate-45  "></div>
 						<div className="absolute h-16 w-16 -right-4 top-1/4  bg-darkRed rounded-full opacity-10 rotate-45  "></div>
 						<div className="absolute h-20 w-14 rounded-full -inset-6  bg-darkRed  opacity-10 rotate-45  "></div>

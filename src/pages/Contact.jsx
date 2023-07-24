@@ -3,6 +3,7 @@ import { MdLocationOn, MdEmail, MdPhoneEnabled, MdErrorOutline, MdPerson, MdMess
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import emailjs from '@emailjs/browser';
 
 export const Contact = () => {
 	const schema = yup.object().shape({
@@ -20,7 +21,14 @@ export const Contact = () => {
 	});
 
 	const onSubmit = (data) => {
-		console.log(data);
+		emailjs.sendForm('service_hdv0oa6', 'template_nilj2st', data, 'Pp6OX7szD7ZRI4tHH').then(
+			(result) => {
+				console.log(result.text);
+			},
+			(error) => {
+				console.log(error.text);
+			}
+		);
 	};
 
 	const contactDetail = [
@@ -34,7 +42,7 @@ export const Contact = () => {
 			id: 2,
 			icon: MdPhoneEnabled,
 			title: 'Phone',
-			detail: '92-312-8230803',
+			detail: '92-316-7133715',
 		},
 		{
 			id: 3,
@@ -58,8 +66,8 @@ export const Contact = () => {
 									<el.icon className="text-2xl" />
 								</div>
 								<div className="ml-6 ">
-									<h2 className="text-sm md:text-lg font-semibold">{el.title}</h2>
-									<span className="text-xs md:text-lg font-medium text-gray-600">{el.detail}</span>
+									<h2 className="text-sm md:text-md font-semibold">{el.title}</h2>
+									<span className="text-xs md:text-sm font-medium text-gray-600">{el.detail}</span>
 								</div>
 							</div>
 						);
@@ -94,7 +102,7 @@ export const Contact = () => {
 								cols="30"
 								rows="4"
 								className="w-full py-3 px-9 text-xs font-light bg-stone-100 rounded-sm focus:drop-shadow-lg outline-0"
-								placeholder="Enter your order details"
+								placeholder="Enter your message"
 								{...register('message')}
 							></textarea>
 							{errors.message && <MdErrorOutline className="text-lightRed absolute text-md z-20 top-2 -right-5 " />}

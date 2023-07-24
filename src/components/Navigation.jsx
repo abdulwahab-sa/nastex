@@ -32,7 +32,7 @@ const navItems = [
 ];
 
 const Navigation = () => {
-	const [mobileToggle, setMobileToggle] = useState(false);
+	const [mobileToggle, setMobileToggle] = useState(true);
 
 	return (
 		<div className="w-full h-full  py-3 flex justify-between items-center relative">
@@ -45,7 +45,7 @@ const Navigation = () => {
 			<div
 				className={`absolute ${
 					mobileToggle ? 'left-0' : '-left-full'
-				}  top-20 h-56 w-full bg-stone-100 shadow-xl md:shadow-none md:bg-inherit md:h-full flex flex-col z-50 md:static md:flex-row md:w-6/12 justify-evenly items-center text-sm font-semibold text-stone-600 transition-all`}
+				}  top-20 h-56 w-full bg-stone-100 shadow-xl md:shadow-none md:bg-inherit md:h-full flex flex-col z-50 md:static md:flex-row md:w-6/12 justify-evenly items-center text-sm md:text-base font-semibold text-stone-500 transition-all`}
 			>
 				{navItems.map((el) => {
 					return (
@@ -54,7 +54,7 @@ const Navigation = () => {
 								to={el.to}
 								key={el.id}
 								onClick={() => setMobileToggle(!mobileToggle)}
-								className={({ isActive, isPending }) => (isPending ? 'text-darkGray' : isActive ? 'text-lightRed' : '')}
+								className={({ isActive, isPending }) => (isPending ? 'text-stone-500' : isActive ? 'text-lightRed' : '')}
 							>
 								{el.title}
 							</NavLink>

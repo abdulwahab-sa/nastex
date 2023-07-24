@@ -103,7 +103,7 @@ export const About = () => {
 					<img src={ceo} alt="" className="w-40 h-40 object-cover object-top rounded-full mt-8 mb-2" />
 					<h2 className="font-medium text-md md:text-lg text-center">Aistam Nasrullah</h2>
 					<h2 className="text-md">
-						Founder & CEO, <span className="text-darkRed font-semibold"> Pentago Mfg </span>
+						Founder & CEO - <span className="text-darkRed font-semibold"> Pentago</span>
 					</h2>
 				</motion.div>
 				<motion.p
