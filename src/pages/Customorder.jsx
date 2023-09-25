@@ -40,7 +40,7 @@ const Customorder = () => {
 	};
 
 	return (
-		<div className="w-full h-full mt-14 p-2 overflow-hidden">
+		<div className="w-full h-full mt-14 p-2 overflow-hidden font-montserrat">
 			<ToastContainer
 				position="top-right"
 				autoClose={5000}
@@ -54,8 +54,8 @@ const Customorder = () => {
 				theme="light"
 			/>
 			<div className=" relative text-darkGray text-center my-6  mx-auto w-11/12 md:max-w-xl ">
-				<div className="absolute inset-0 w-72 h-72 bg-lightRed rounded-full mix-blend-multiply filter blur-xl opacity-10 "></div>
-				<div className="absolute bottom-0 right-0 w-72 h-72 bg-lightRed rounded-full mix-blend-multiply filter blur-xl opacity-10 "></div>
+				<div className="absolute inset-0 w-72 h-72 bg-orange-300 rounded-full mix-blend-multiply filter blur-xl opacity-10 "></div>
+				<div className="absolute bottom-0 right-0 w-72 h-72 bg-orange-400 rounded-full mix-blend-multiply filter blur-xl opacity-10 "></div>
 
 				<h2 className="text-xl md:text-3xl font-semibold">
 					{' '}
@@ -65,7 +65,7 @@ const Customorder = () => {
 				<span className="text-sm md:text-lg">We want to hear from you. Let us know how we can help.</span>
 				<div className="relative mt-2 flex flex-col justify-center items-center w-full py-10">
 					<form ref={formRef} onSubmit={handleSubmit(onSubmit)} className="relative md:w-8/12">
-						<div className="absolute h-16 w-16 left-12 bottom-0 bg-darkRed rounded-xl opacity-10 rotate-45  "></div>
+						<div className="absolute h-16 w-16 left-12 bottom-0 bg-orange-600 rounded-xl opacity-10 rotate-45  "></div>
 						<div className="absolute h-16 w-16 -right-4 top-1/4  bg-darkRed rounded-full opacity-10 rotate-45  "></div>
 						<div className="absolute h-20 w-14 rounded-full -inset-6  bg-darkRed  opacity-10 rotate-45  "></div>
 
@@ -123,7 +123,7 @@ const Customorder = () => {
 						<input
 							type="submit"
 							value="Send Inquiry"
-							className="cursor-pointer text-sm font-semibold my-3 bg-red-500 text-neutral-50 p-3 rounded-md hover:bg-red-700 transition-all z-40"
+							className="font-montserrat cursor-pointer text-sm font-semibold my-3 bg-orange-500 text-neutral-50 p-3 rounded-md hover:bg-orange-600 transition-all z-40"
 						/>
 					</form>
 				</div>

@@ -7,16 +7,16 @@ import { motion } from 'framer-motion';
 
 export const About = () => {
 	return (
-		<div className="mt-14 w-full h-full">
+		<div className="mt-14 w-full h-full font-montserrat">
 			<div className="px-6">
 				<motion.h4
 					initial={{ opacity: 0, y: 100 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
 					viewport={{ once: true }}
-					className="text-md md:text-2xl font-semibold my-3 text-lightRed"
+					className="text-md md:text-2xl font-semibold my-3 text-orange-500"
 				>
-					We are Pentago
+					We are Nastex
 				</motion.h4>
 				<motion.h2
 					initial={{ opacity: 0, y: 100 }}
@@ -42,23 +42,23 @@ export const About = () => {
 			</div>
 			<div className="my-16 px-6 flex flex-col md:flex-row items-start">
 				<h2 className="text-2xl md:text-4xl font-medium text-darkGray flex justify-center items-center mb-6 md:m-0 md:w-1/2">
-					Our Story <MdSouthEast className=" ml-2 text-darkRed" />
+					Our Story <MdSouthEast className=" ml-2 text-orange-500" />
 				</h2>
 				<motion.div
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
 					transition={{ duration: 0.9 }}
 					viewport={{ once: true }}
-					className="w:10/12 md:w-1/2 text-md"
+					className="w:10/12 md:w-1/2 text-md md:text-lg"
 				>
 					<p className="font-medium">
-						Our story began when our owner, Aitsam Nasrullah, a passionate entrepreneur with a love for fashion, noticed a gap in the market
-						for affordable, customizable clothing. Driven by his vision, Aitsam founded Pentago Mfg Corp, and we have been producing
+						Our story began when our owner, Mr. Nasrullah Khan, a passionate entrepreneur with a love for fashion, noticed a gap in the
+						market for affordable, customizable clothing. Driven by his vision, Mr. Nasrullah founded Nastex, and we have been producing
 						high-quality clothing ever since.
 					</p>
 					<br />
 					<p>
-						At Pentago, we specialize in three main categories of clothing: streetwear, fitness apparel, and sports wear. We work closely
+						At Nastex, we specialize in three main categories of clothing: streetwear, fitness apparel, and sports wear. We work closely
 						with our clients to understand their unique vision and design custom garments that meet their specific needs. From the initial
 						concept to the final product, our team of experienced professionals is committed to delivering exceptional service and
 						outstanding quality.
@@ -71,7 +71,7 @@ export const About = () => {
 					</p>
 					<br />
 					<p>
-						Thank you for choosing Pentago. We look forward to working with you and creating customized clothing that exceeds your
+						Thank you for choosing Nastex. We look forward to working with you and creating customized clothing that exceeds your
 						expectations.
 					</p>
 				</motion.div>
@@ -90,7 +90,7 @@ export const About = () => {
 					viewport={{ once: true }}
 					className=" text-2xl md:text-3xl text-darkGray font-medium"
 				>
-					Message from <span className="text-darkRed">CEO</span>
+					Message from <span className="text-orange-500">CEO</span>
 				</motion.h2>
 
 				<motion.div
@@ -98,12 +98,11 @@ export const About = () => {
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ delay: 0.9 }}
 					viewport={{ once: true }}
-					className="md:w-1/2 w-full flex flex-col items-center"
+					className="md:w-1/2 w-full flex flex-col items-center gap-3"
 				>
-					<img src={ceo} alt="" className="w-40 h-40 object-cover object-top rounded-full mt-8 mb-2" />
-					<h2 className="font-medium text-md md:text-lg text-center">Aistam Nasrullah</h2>
+					<h2 className="font-medium text-md md:text-2xl text-center"> Nasrullah Khan</h2>
 					<h2 className="text-md">
-						Founder & CEO - <span className="text-darkRed font-semibold"> Pentago</span>
+						Founder & CEO - <span className="text-orange-500 font-semibold"> NASTEX</span>
 					</h2>
 				</motion.div>
 				<motion.p
@@ -113,8 +112,8 @@ export const About = () => {
 					viewport={{ once: true }}
 					className="md:w-1/2 w-10/12 text-sm md:text-lg mt-3 mb-8"
 				>
-					"Our mission at Pentago is to design, produce and distribute high-quality clothing that not only meets the needs and preferences
-					of our customers, but also reflects our commitment to sustainability and innovation. We strive to create a positive impact on the
+					"Our mission at NASTEX is to design, produce and distribute high-quality clothing that not only meets the needs and preferences of
+					our customers, but also reflects our commitment to sustainability and innovation. We strive to create a positive impact on the
 					environment and society, by implementing eco-friendly and ethical manufacturing practices, supporting fair labor standards, and
 					giving back to the communities we serve."
 				</motion.p>

@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './../images/pentago_logo.png';
+import logo from './../images/nastex-logo.png';
 import { Link } from 'react-router-dom';
 import { MdLocationOn, MdPhoneEnabled, MdMail } from 'react-icons/md';
 
@@ -17,17 +17,17 @@ const contact = [
 	{
 		id: 3,
 		icon: MdMail,
-		statement: 'info@pentagomfgcorp.com',
+		statement: 'info@nastexenterprises.com',
 	},
 ];
 
 const Footer = () => {
 	const d = new Date();
 	return (
-		<div className="w-full h-full">
+		<div className="w-full h-full font-montserrat">
 			<div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:items-start md:space-x-8 md:justify-around p-5 md:py-10 bg-stone-800 border-b border-gray-700 ">
 				<div className="max-w-xs">
-					<img src={logo} alt="" className="w-10 mb-3" />
+					<img src={logo} alt="" className="w-20 mb-3" />
 					<p className="text-sm font-light text-gray-300">
 						{' '}
 						We specialize in creating high-quality, custom-made garments for businesses in the sports, streetwear, and fitness apparel
@@ -36,7 +36,7 @@ const Footer = () => {
 					</p>
 				</div>
 				<div className=" text-gray-300 ">
-					<h4 className="mb-2 text-md font-medium"> Useful Links</h4>
+					<h4 className="mb-2 text-md font-medium text-orange-500"> Useful Links</h4>
 					<div className="flex flex-col justify-center text-sm font-light space-y-2">
 						<Link to="/about">
 							{' '}
@@ -57,7 +57,7 @@ const Footer = () => {
 					</div>
 				</div>
 				<div className=" text-gray-300  ">
-					<h4 className="mb-2 text-md font-medium"> Contact Info</h4>
+					<h4 className="mb-2 text-md font-medium text-orange-500"> Contact Info</h4>
 					<div className="flex flex-col justify-center text-sm font-light space-y-3">
 						{contact.map((el) => {
 							return (

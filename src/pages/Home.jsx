@@ -6,68 +6,85 @@ import teamwearImg from './../images/teamwear.jpg';
 import cart from './../assets/cart.svg';
 import time from './../assets/time.svg';
 import clients from './../assets/clients.svg';
-import blobImg from './../images/blob-scene.svg';
-import cartTrolley from './../assets/cart-trolley.svg';
-import check from './../assets/check.svg';
-import order from './../assets/order.svg';
-import tshirt from './../assets/tshirt.svg';
-import quality from './../assets/quality.svg';
-import grow from './../assets/grow.svg';
-import cover from './../images/pentago_cover.jpg';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import coverOne from './../images/cover-one.jpg';
+import coverTwo from './../images/cover-two.jpg';
+import orderIcon from './../images/orderIcon.png';
+import samplingIcon from './../images/samplingIcon.png';
+import pictureIcon from './../images/pictureIcon.png';
+import shippingIcon from './../images/shippingIcon.png';
+import hoodieImg from './../images/hoodie-nas.jpg';
+import trouserImg from './../images/trouser-nas.jpg';
+import shirtImg from './../images/shirt-nas.jpg';
+import sweatImg from './../images/sweat-nas.jpg';
+import fullsleeveImg from './../images/fullsleeve-nas.jpg';
+import halfsleeveImg from './../images/halfsleeve-nas.jpg';
+import shortsImg from './../images/shorts-nas.jpg';
+import tracksuitimg from './../images/tracksuit-nas.jpg';
 
-const homeData = [
+const processData = [
 	{
 		id: 1,
-		img: order,
-		title: 'Ease of Ordering',
-		desc: 'We have created a seamless sourcing experience for your brand, free of any unnecessary difficulties or complications.',
+		img: orderIcon,
+		title: 'ORDER PLACEMENT',
+		desc: 'Start your own brand with fully custom clothing line',
 	},
 	{
 		id: 2,
-		img: tshirt,
-		title: 'Sample & Mockups',
-		desc: 'We encourage new brands to order samples prior bulk production to ensure quality and accurate designs.',
+		img: samplingIcon,
+		title: 'ORDER SUMMARY & SAMPLING',
+		desc: 'We will provide you detail guidance about your designs and styles',
 	},
 	{
 		id: 3,
-		img: cartTrolley,
-		title: 'Low MOQ',
-		desc: 'Unlike other apparel suppliers, we have low minimum order quantity to support small brands at initial stages.',
+		img: pictureIcon,
+		title: 'PICTURE/VIDEO OF PRODUCTION',
+		desc: 'You will get all updates with pictures & videps of your order',
 	},
 	{
 		id: 4,
-		img: check,
-		title: 'One Stop Solution',
-		desc: 'Fabric sourcing, patterns, sizing, logos, customized packaging & much more. All in one clothing factory.',
-	},
-	{
-		id: 5,
-		img: quality,
-		title: 'Premium Quality',
-		desc: 'We offer the highest quality. But do not take our word for it. Order a sample and see for yourself. ',
+		img: shippingIcon,
+		title: 'SHIPPING',
+		desc: 'Once shipped you will get tracking number to track your order',
 	},
 ];
 
-const categoryData = [
+const streetwearCategories = [
 	{
 		id: 1,
-		img: streetwearImg,
-		title: 'Streetwear',
-		tagline: 'All about the Urban Vibe',
+		img: hoodieImg,
 	},
 	{
 		id: 2,
-		img: activewearImg,
-		title: 'Activewear',
-		tagline: 'Designed to Move You',
+		img: trouserImg,
 	},
 	{
 		id: 3,
-		img: teamwearImg,
-		title: 'Teamwear',
-		tagline: 'Style in Uniforms',
+		img: shirtImg,
+	},
+	{
+		id: 4,
+		img: sweatImg,
+	},
+];
+
+const sportswearCategories = [
+	{
+		id: 1,
+		img: fullsleeveImg,
+	},
+	{
+		id: 2,
+		img: halfsleeveImg,
+	},
+	{
+		id: 3,
+		img: shortsImg,
+	},
+	{
+		id: 4,
+		img: tracksuitimg,
 	},
 ];
 
@@ -148,242 +165,139 @@ const Home = () => {
 	const handleToggle = (i) => {
 		setOpen(open === i ? null : i);
 	};
-	/*
-	const handleLoading = () => {
-		setIsLoading(false);
-	};
 
-	useEffect(() => {
-		window.addEventListener('load', handleLoading);
-		return () => window.removeEventListener('load', handleLoading);
-	}, []);
-*/
 	return (
 		<div className=" bg-gray-100  h-full w-full overflow-hidden">
-			<div className="relative bg-gray-50">
-				<img src={cover} alt="" className="w-full h-screen shadow-sm object-cover" />
-				<div className=" absolute top-1/2 -translate-y-1/2 left-0 right-0  text-center font-semibold md:tracking-widest">
-					<div className="z-40">
-						<h2 className=" text-gray-100 bg-red-800 text-lg md:text-3xl md:my-2 py-3 font-semibold"> #1 CLOTHING MANUFACTURER</h2>
-					</div>
+			<div className="flex">
+				<img src={coverOne} alt="" className="w-1/2" />
+				<img src={coverTwo} alt="" className="w-1/2" />
+			</div>
+			<motion.div
+				initial={{ opacity: 0, y: 100 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.9 }}
+				viewport={{ once: true }}
+				className="flex flex-col  md:flex-row py-28 px-8 md:px-16  items-center md:items-end space-y-8 md:space-y-0 "
+			>
+				<h1 className="text-3xl md:text-6xl font-normal md:w-1/2 text-stone-700 font-raleway">
+					World Class Clothing <br /> Manufacturer with <br /> Impeccable Quality
+				</h1>
+				<div className=" flex flex-col items-end space-y-3 h-full w-1/2 ">
+					<Link to="/products">
+						<button className="font-montserrat w-32 md:w-40 py-3 md:py-5 border-2 rounded-md border-stone-500 text-stone-600 text-sm md:text-lg font-semibold">
+							{' '}
+							Our Products{' '}
+						</button>
+					</Link>
+					<Link to="/customorder">
+						<button className=" font-montserrat w-40 md:w-56 py-3 md:py-5 rounded-md bg-orange-500 text-white text-sm md:text-lg font-semibold hover:bg-orange-600">
+							{' '}
+							Order Samples{' '}
+						</button>
+					</Link>
+				</div>
+			</motion.div>
+
+			<div className="pt-20 pb-28 px-4 md:px-8  font-montserrat flex flex-col items-center justify-evenly md:flex-row gap-8 md:gap-0">
+				<span className=" py-2 px-12 border-2 border-orange-500 rounded-lg text-lg md:text-2xl font-semibold text-orange-500">
+					ABOUT NASTEX
+				</span>
+				<p className="w-1/2 text-sm md:text-lg">
+					We are a team of highly skilled professionals who have been working in the apparel industry for over 10 years. We have worked with
+					some of the biggest brands in the world. Our team has experience in all aspects of the apparel industry, from design to production
+					to marketing. <br /> <br /> We are passionate about what we do and take pride in our work. Our goal is to provide you with the
+					best possible service at an affordable price. If you're looking for a reliable partner who can help you grow your business, then
+					look no further than Nastex!
+				</p>
+			</div>
+
+			<div className="font-montserrat ">
+				<div className="py-10 text-center">
+					<span className=" py-2 px-12 border-2 border-orange-500 rounded-lg text-lg md:text-2xl font-semibold text-orange-500">
+						OUR PROCESS
+					</span>
+				</div>
+				<div className="flex flex-col  md:flex-row  process-wrapper">
+					{processData.map((el) => (
+						<div
+							key={el.id}
+							className={` flex flex-1 flex-col items-center text-center space-y-3 py-16 px-14
+						${
+							el.id === 1
+								? 'bg-[#181818] text-white'
+								: el.id === 2
+								? 'bg-[#303030] text-white'
+								: el.id === 3
+								? 'bg-stone-300 text-darkGray'
+								: 'bg-orange-300 text-white'
+						}
+					
+					
+					
+					`}
+						>
+							<img src={el.img} alt="" className="w-14" />
+							<span className="text-xl font-semibold h-20  flex justify-center items-center">{el.title}</span>
+							<p className="text-md h-24  flex justify-center items-center">{el.desc}</p>
+						</div>
+					))}
 				</div>
 			</div>
-			<div className="hidden bg-gray-50 pt-10 text-center  flex-col">
-				<span className=" text-xl md:text-2xl font-semibold">
-					{' '}
-					Casual, Fitness, Sports Apparels & many more <span className="text-2xl text-lightRed">+</span>{' '}
+
+			<div className="py-20 px-8 text-center font-montserrat">
+				<Link to="/customorder">
+					<button className="w-40 md:w-64 py-3 md:py-6 rounded-md bg-orange-500 text-white text-sm md:text-lg font-semibold hover:bg-orange-600">
+						{' '}
+						GET A QUOTE NOW
+					</button>
+				</Link>
+			</div>
+
+			<div className="font-montserrat py-20 px-8 text-center flex flex-col justify-center items-center gap-8">
+				<span className=" py-2 px-12 border-2 border-orange-500 rounded-lg text-lg md:text-2xl font-semibold text-orange-500">
+					Casual/Street Wears
 				</span>
 
-				<button className="px-3 py-2 my-8 mx-auto rounded-md bg-lightRed text-gray-100 text-md font-semibold hover:bg-red-800 shadow-stone-700/20 transition-all ">
-					Get Quote
-				</button>
-			</div>
-
-			<div class=" h-full p-6 bg-red-800">
-				<motion.div
-					initial={{ opacity: 0, y: 100 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.9 }}
-					viewport={{ once: true }}
-					class="hide-card flex flex-col items-center justify-center text-center text-gray-100  px-3"
-				>
-					<h2 class="text-2xl font-semibold my-2">ABOUT OUR COMPANY</h2>
-
-					<p class="md:w-9/12">
-						We specialize in creating high-quality, custom-made garments for businesses in the sports, streetwear, and fitness apparel
-						industries. Our mission is to help you stand out from the competition by providing you with unique, stylish, and functional
-						apparel that is tailored to your specific needs and brand image. With our team of experienced designers and skilled craftsmen,
-						we are able to bring your vision to life, using only the highest quality fabrics and materials. From sports team uniforms to
-						branded streetwear, we offer a wide range of customization options to ensure that your clothing reflects your brand and meets
-						your customers' needs. So whether you're a sports club, streetwear brand, or fitness apparel brand, we are here to help you take
-						your business to the next level.
-					</p>
-					<div class="flex items-center justify-center my-6 md:w-8/12">
-						<span>
-							<img src={grow} alt="" className="w-16 h-16 " />
-						</span>
-						<span class="font-semibold text-2xl ml-3">Grow your brand with Pentago</span>
-					</div>
-				</motion.div>
-				<div class=" h-full w-11/12 mx-auto space-y-8 md:space-y-0 bg-gray-100 py-8 md:py-16 text-center font-normal flex flex-col items-center justify-center rounded-xl shadow-xl md:flex-row md:justify-evenly z-30">
-					{figures.map((el) => {
-						return (
-							<motion.div
-								key={el.id}
-								class="hide-card flex flex-col items-center justify-center pb-3 border-b-2 border-lightRed"
-								initial={{ opacity: 0, y: 100 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								transition={{ duration: 0.9 }}
-								viewport={{ once: true }}
-							>
-								<span class="text-4xl mb-1">{el.number} </span>
-								<span class="text-lg">{el.title}</span>
-							</motion.div>
-						);
-					})}
+				<div className="flex flex-col md:flex-row gap-4">
+					{streetwearCategories.map((el) => (
+						<img src={el.img} alt="" key={el.id} className="h-56 rounded-lg" />
+					))}
 				</div>
-			</div>
-
-			<div className="relative mx-auto flex flex-col justify-center px-4  bg-gray-50">
-				<motion.span
-					initial={{ opacity: 0 }}
-					whileInView={{ opacity: 1 }}
-					transition={{ duration: 1.4 }}
-					viewport={{ once: true }}
-					className=" my-8 text-2xl font-semibold md:text-center"
-				>
-					{' '}
-					<span className="text-darkGray">Looking for the Best Manufacturer?</span> <br />{' '}
-					<span className="text-lightRed"> Here's how we can help.</span>{' '}
-				</motion.span>
-				<div className="md:flex md:flex-wrap w-full h-full justify-center z-30 ">
-					{homeData.map((el) => {
-						return (
-							<motion.div
-								className="mx-auto mt-4 flex justify-center items-start w-full p-3 md:w-80 md:py-6 md:m-6  md:border-0 md:rounded-lg md:shadow-md md:shadow-stone-700/20"
-								key={el.id}
-								initial={{ opacity: 0, y: 100 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								transition={{ duration: 1 }}
-								viewport={{ once: true }}
-							>
-								<div class="relative mr-1">
-									<img src={el.img} alt="" class="h-7 w-7 z-30" />
-									<span class="absolute inset-0 h-12 w-12 bg-darkRed rounded-full  mix-blend-multiply filter blur-md opacity-50 animate-smallBlob z-20"></span>
-								</div>
-								<div className="flex flex-col items-start w-10/12 px-4 md:px-2 ">
-									<h2 className=" text-lightRed text-xl font-semibold mb-2">{el.title}</h2>
-									<p className="text-md font-medium">
-										{' '}
-										<span className="text-darkGray"> {el.desc} </span>{' '}
-									</p>
-								</div>
-							</motion.div>
-						);
-					})}
-				</div>
-			</div>
-
-			<div>
-				<div className="relative h-full w-full flex flex-col bg-gray-50  py-8 ">
-					<motion.span
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1 }}
-						transition={{ duration: 1.4 }}
-						viewport={{ once: true }}
-						className="my-8 px-4 md:text-center text-2xl font-semibold lg:text-3xl"
-					>
+				<Link to="/products">
+					<button className=" font-montserrat w-40 md:w-64 py-2 md:py-4 rounded-md bg-orange-500 text-white text-sm md:text-lg font-semibold hover:bg-orange-600">
 						{' '}
-						<span className="text-darkGray"> Our Products range </span> <br /> <span className="text-lightRed"> shows our diversity</span>{' '}
-					</motion.span>
-					<div className="md:flex md:flex-wrap justify-center">
-						{categoryData.map((el) => {
-							return (
-								<Link to="/products">
-									<motion.div
-										key={el.id}
-										className="my-8 w-64 h-64 md:w-80 md:h-80 mx-auto rounded-lg drop-shadow-lg md:m-3 md:flex md:flex-col md:justify-center md:items-center"
-										initial={{ opacity: 0, y: 100 }}
-										whileInView={{ opacity: 1, y: 0 }}
-										transition={{ duration: 1 }}
-										viewport={{ once: true }}
-									>
-										<div className="relative">
-											<img
-												src={el.img}
-												className=" h-full w-full object-cover object-center duration-300 cursor-pointer rounded-lg"
-												loading="lazy"
-											/>
-
-											<div className="absolute backdrop-blur-md bg-white/30  bottom-0 right-0 left-0 flex justify-evenly w-full py-2 px-2 rounded-xl items-center cursor-pointer">
-												<div className="text-darkGray leading-4">
-													<h2 className="text-md font-semibold md:text-md lg:text-lg">{el.title}</h2>
-													<span className="text-xs md:text-sm">{el.tagline}</span>
-												</div>
-												<span className="text-lightRed text-lg md:text-xl">
-													{' '}
-													<FaArrowCircleRight />{' '}
-												</span>
-											</div>
-										</div>
-									</motion.div>
-								</Link>
-							);
-						})}
-					</div>
-				</div>
-
-				<motion.div
-					initial={{ opacity: 0 }}
-					whileInView={{ opacity: 1 }}
-					transition={{ duration: 1.4 }}
-					viewport={{ once: true }}
-					className=" bg-gray-50 text-center font-semibold py-8"
-				>
-					{' '}
-					<span className="text-darkGray text-lg md:text-xl">
-						{' '}
-						Like what you see? <br /> Get in touch and place an order!{' '}
-					</span>{' '}
-					<br />{' '}
-					<button className="bg-lightRed text-gray-100 py-3 px-6 my-6 rounded-full text-sm font-semibold hover:bg-red-800 transition-all duration-300 cursor-pointer">
-						Order Sample
+						View All Street Wears
 					</button>
-				</motion.div>
+				</Link>
 			</div>
 
-			<div className=" relative h-full w-full flex flex-col bg-gray-50">
-				<motion.span
-					initial={{ opacity: 0 }}
-					whileInView={{ opacity: 1 }}
-					transition={{ duration: 1.4 }}
-					viewport={{ once: true }}
-					className="my-2 px-4 text-2xl font-semibold lg:text-3xl md:text-center z-30"
-				>
-					{' '}
-					<span className="text-darkGray">Interesting Facts</span> <br /> <span className="text-lightRed"> about Pentago</span>{' '}
-				</motion.span>
-				<div className="md:flex md:flex-wrap w-full h-full justify-center items-center">
-					{facts.map((el) => {
-						return (
-							<motion.div
-								initial={{ opacity: 0, y: 100 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								transition={{ duration: 1 }}
-								viewport={{ once: true }}
-								className="w-full border-b  border-gray-200 md:border-0 flex flex-col justify-center items-center my-3 py-4 md:w-56 md:m-4"
-							>
-								<img src={el.img} className="red w-8 mb-3" />
-								<div className="text-darkGray text-lg font-semibold flex flex-col w-full text-center leading-5">
-									<span>
-										{el.firstHeading} <br /> {el.secHeading}
-									</span>
-								</div>
-							</motion.div>
-						);
-					})}
+			<div className="font-montserrat py-20 px-8 text-center flex flex-col justify-center items-center gap-8">
+				<span className=" py-2 px-12 border-2 border-orange-500 rounded-lg text-lg md:text-2xl font-semibold text-orange-500">
+					Fitness/Sports Wears
+				</span>
+
+				<div className="flex flex-col md:flex-row gap-4">
+					{sportswearCategories.map((el) => (
+						<img src={el.img} alt="" key={el.id} className="h-56 rounded-lg" />
+					))}
 				</div>
+				<Link to="/products">
+					<button className="font-montserrat w-56 md:w-64 py-2 md:py-4 rounded-md bg-orange-500 text-white text-sm md:text-lg font-semibold hover:bg-orange-600">
+						{' '}
+						View All Sports Wears
+					</button>
+				</Link>
 			</div>
 
-			<div className="relative h-full w-full flex flex-col bg-gray-50 py-8 px-2">
+			<div className="relative h-full w-full flex flex-col items-center  py-8 px-2">
 				<motion.span
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
-					transition={{ duration: 1.4 }}
+					transition={{ duration: 1 }}
 					viewport={{ once: true }}
-					className="px-4 my-4 text-2xl font-semibold lg:text-3xl md:text-center"
+					className=" font-montserrat mb-3 py-2 px-12 border-2 border-orange-500 rounded-lg text-lg md:text-2xl font-semibold text-orange-500"
 				>
-					{' '}
-					<motion.span
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1 }}
-						transition={{ duration: 1 }}
-						viewport={{ once: true }}
-						className="text-darkGray"
-					>
-						Frequently Asked
-					</motion.span>{' '}
-					<br /> <span className="text-lightRed"> Questions (FAQ)</span>{' '}
+					Frequently Asked Questions - FAQ
 				</motion.span>
 				{faq.map((el) => {
 					return (
@@ -392,17 +306,19 @@ const Home = () => {
 							whileInView={{ opacity: 1 }}
 							transition={{ duration: 1.4 }}
 							viewport={{ once: true }}
-							className="z-30 h-full px-4 py-4 my-3 border-y border-gray-200 border-x-4 border-x-red-600 md:w-7/12 md:mx-auto"
+							className="z-30 h-full px-4 py-4 my-3 border-b-2 border-orange-500 w-full md:w-7/12 md:mx-auto"
 							key={el.id}
 							onClick={() => handleToggle(el.id)}
 						>
 							<div className="h-3 text-sm md:text-md font-medium flex flex-col items-center justify-center ">
 								<div className={`w-full flex justify-between items-center text-darkGray}`}>
-									<p className="">{el.question} </p>
+									<p className="font-montserrat">{el.question} </p>
 									<span className=" font-bold ">{open === el.id ? <FaAngleUp /> : <FaAngleDown />}</span>
 								</div>
 							</div>
-							<p className={`mt-8 py-3 text-darkGray text-sm md:text-md  ${open === el.id ? 'block' : 'hidden'}`}>{el.answer}</p>
+							<p className={` font-montserrat mt-8 py-3 text-darkGray text-sm md:text-md  ${open === el.id ? 'block' : 'hidden'}`}>
+								{el.answer}
+							</p>
 						</motion.div>
 					);
 				})}

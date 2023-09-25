@@ -8,7 +8,8 @@ module.exports = {
 				smallBlob: 'smallBlob 6s infinite',
 			},
 			fontFamily: {
-				montserrat: ['Montserrat'],
+				raleway: ['Raleway', 'sans-serif'],
+				montserrat: ['Montserrat', 'sans-serif'],
 			},
 			colors: {
 				lightRed: '#C00000',

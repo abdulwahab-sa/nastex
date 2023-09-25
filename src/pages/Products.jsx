@@ -67,7 +67,7 @@ const Products = () => {
 				animate={{ opacity: 1 }}
 				initial={{ opacity: 0 }}
 				exit={{ opacity: 0 }}
-				className="h-full w-56 bg-neutral-100 shadow-lg m-2 p-2 rounded-lg"
+				className="h-full w-56 bg-neutral-100 shadow-lg m-2 p-2 rounded-lg font-montserrat"
 				key={index}
 			>
 				<img src={el.productImg} alt="" className="h-40 w-full object-cover object-center rounded-lg" loading="lazy" />
@@ -75,7 +75,7 @@ const Products = () => {
 					<h2 className="text-darkGray font-semibold mt-2">{el.productName}</h2>
 					<h3 className="text-darkGray font-normal text-xs ">{el.mainCategory}</h3>
 					<button
-						className="w-full py-1 mt-2 text-sm font-medium text-gray-50 bg-lightRed rounded-xl hover:bg-red-800 transition-all "
+						className="font-montserrat w-full py-1 mt-2 text-sm font-medium text-gray-50 bg-orange-400 rounded-xl hover:bg-orange-600 transition-all "
 						onClick={() => handleModal(el.id)}
 					>
 						View Product
@@ -90,14 +90,14 @@ const Products = () => {
 		const productData = products.find((el) => el.id === prodId);
 
 		return (
-			<div className="fixed bg-darkGray bg-opacity-60 w-full inset-0  flex flex-col justify-start items-center">
+			<div className="fixed bg-darkGray bg-opacity-60 w-full inset-0  flex flex-col justify-start items-center font-montserrat">
 				<div className=" overflow-y-scroll md:overflow-y-hidden w-72 md:w-3/5 md:my-auto bg-opacity-100 text-darkGray border border-stone-300 bg-neutral-100 shadow-2xl">
 					<div
 						className=" flex items-center justify-start py-4 px-2 cursor-pointer border-b border-stone-300"
 						onClick={() => setModal(!modal)}
 					>
 						<FaAngleLeft />
-						<span className="text-xs md:text-sm font-medium mx-2 hover:text-lightRed transition-all"> BACK TO ALL PRODUCTS</span>
+						<span className="text-xs md:text-sm font-medium mx-2 hover:text-orange-500 transition-all"> BACK TO ALL PRODUCTS</span>
 					</div>
 					<div className="md:flex">
 						<img src={productData.productImg} alt="" className=" w-full h-72 md:w-1/2 md:h-screen object-cover object-center " />
@@ -179,14 +179,14 @@ const Products = () => {
 			<div className="w-full h-full relative">
 				<img src={imgFour} className="w-full h-56 object-cover object-bottom" alt="athlete doing exercise wearing fitness clothes" />
 				<div className="absolute inset-0 flex items-center justify-center ">
-					<h2 className="   text-xl text-neutral-50 font-bold bg-lightRed p-2 rounded-md opacity-90"> OUR PRODUCTS </h2>
+					<h2 className="   text-xl text-neutral-50 font-bold bg-orange-500 py-3 px-5 rounded-md opacity-90"> OUR PRODUCTS </h2>
 				</div>
 			</div>
 			<div className="p-2 mt-3 flex flex-wrap justify-center">
 				{categories.map((el) => {
 					return (
 						<button
-							className="p-3 m-1 text-darkGray font-semibold text-sm border border-stone-300 rounded-md hover:bg-lightRed hover:text-gray-50 transition-all"
+							className="py-3 px-6 m-1 text-darkGray font-semibold text-sm border border-stone-300 rounded-md hover:bg-orange-500 hover:text-gray-50 transition-all"
 							key={el.id}
 							onClick={() => handleCategory(el.title)}
 						>

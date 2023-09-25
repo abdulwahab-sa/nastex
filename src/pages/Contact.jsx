@@ -52,7 +52,7 @@ export const Contact = () => {
 		},
 	];
 	return (
-		<div className=" my-20 w-full h-full text-darkGray overflow-hidden">
+		<div className="font-montserrat my-20 w-full h-full text-darkGray overflow-hidden">
 			<div className=" px-4 md:px-10 flex flex-col items-center md:flex-row md:justify-evenly">
 				<div className=" md:w-1/2">
 					<h2 className="text-xl md:text-3xl font-semibold">Get in Touch with us</h2>
@@ -62,7 +62,7 @@ export const Contact = () => {
 					{contactDetail.map((el) => {
 						return (
 							<div className="mt-6 flex items-center " key={el.id}>
-								<div className="bg-red-800 text-gray-50 w-12 h-10 md:w-14 md:h-12 p-3 rounded-lg flex justify-center items-center">
+								<div className="bg-stone-600 text-orange-500 w-12 h-10 md:w-14 md:h-12 p-3 rounded-lg flex justify-center items-center">
 									<el.icon className="text-2xl" />
 								</div>
 								<div className="ml-6 ">
@@ -73,7 +73,7 @@ export const Contact = () => {
 						);
 					})}
 				</div>
-				<div className="bg-red-800 p-6 rounded-md mt-10 md:m-0 w-10/12 md:w-2/5 max-w-sm shadow-md">
+				<div className="bg-stone-600 p-6 rounded-md mt-10 md:m-0 w-10/12 md:w-2/5 max-w-sm shadow-md">
 					<form onSubmit={handleSubmit(onSubmit)} className="relative">
 						<div className="relative  my-2">
 							<MdPerson className="text-stone-500 absolute text-md z-20 inset-3 " />
@@ -110,7 +110,7 @@ export const Contact = () => {
 						<input
 							type="submit"
 							value="Send Message"
-							className="cursor-pointer w-full text-xs my-3 bg-red-400 text-neutral-50 p-2 rounded-md hover:bg-red-500 transition-all z-40"
+							className="cursor-pointer w-full text-xs my-3 bg-orange-400 text-neutral-50 p-2 rounded-md hover:bg-red-500 transition-all z-40"
 						/>
 					</form>
 				</div>
