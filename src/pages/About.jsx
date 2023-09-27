@@ -1,123 +1,32 @@
 import React from 'react';
-import aboutImg from './../images/about.jpg';
-import aboutTwoImg from './../images/aboutTwo.jpg';
-import { MdSouthEast } from 'react-icons/md';
-import ceo from './../images/ceo-pic.jpeg';
-import { motion } from 'framer-motion';
 
 export const About = () => {
 	return (
-		<div className="mt-14 w-full h-full font-montserrat">
-			<div className="px-6">
-				<motion.h4
-					initial={{ opacity: 0, y: 100 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6 }}
-					viewport={{ once: true }}
-					className="text-md md:text-2xl font-semibold my-3 text-orange-500"
-				>
-					We are Nastex
-				</motion.h4>
-				<motion.h2
-					initial={{ opacity: 0, y: 100 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ duration: 1 }}
-					viewport={{ once: true }}
-					className="text-md md:text-3xl font-medium text-darkGray"
-				>
-					We set out to help your brand
-				</motion.h2>
-				<motion.h2
-					initial={{ opacity: 0, y: 100 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ duration: 1.2 }}
-					viewport={{ once: true }}
-					className="text-md md:text-3xl font-medium text-stone-400"
-				>
-					with a better way to order
-				</motion.h2>
+		<div className="py-20 w-full h-full font-montserrat about-cover">
+			<div className="blur-bg p-12 mx-auto w-5/6 md:w-4/5 text-sm md:text-lg font-medium text-black">
+				NASTEX is a premier sports/street apparel and accessories provider from Pakistan with worldwide shipping. Since its inception in
+				2021, our company has strived to deliver top-quality products and services that outshine the competition. We aim to exceed customer
+				expectations by offering exceptional products, customer service, and state-of-the-art manufacturing facilities. Our extensive
+				product line includes customizable sportswear, activewear, casual wear and accessories, all made with high-quality materials and
+				advanced manufacturing techniques. From conception to the final product, our team works closely with clients to ensure their
+				expectations are met and exceeded. In addition, we also offer private-label manufacturing services, enabling clients to sell
+				products under their brand name.
+				<br />
+				<br />
+				At Nastex, we are the preferred choice for sports apparel and accessory manufacturing. Our manufacturing unit employs modern
+				machinery and techniques, enabling us to produce high-quality products at affordable prices. We also adopt modern quality control
+				measures to guarantee zero product defects. Our low minimum order quantity allows customers to order small or large products without
+				compromising quality. Customization services are at the heart of our business, and our expert team will work tirelessly to create
+				unique products that match your brand and customer preferences. Our worldwide shipping service allows customers from the USA,
+				Canada, UK, Australia, and Europe to receive our products.
+				<br />
+				<br />
+				Our customers are not just buyers but our partners, and we strive to offer free consultations with our experts to help them make
+				informed decisions. We are passionate about providing exceptional products and services and are always available to assist customers
+				in achieving their goals. At Nastex, we are committed to delivering exceptional products and services that surpass our customer
+				expectations. We continuously improve our facilities, machinery, and techniques to remain at the forefront of the sports apparel and
+				accessories industry. Contact us today to learn more about how we can help you take your business to the next level.
 			</div>
-			<div className="my-8 px-3">
-				<img src={aboutImg} alt="" className="w-full h-96 object-cover object-center rounded-xl" />
-			</div>
-			<div className="my-16 px-6 flex flex-col md:flex-row items-start">
-				<h2 className="text-2xl md:text-4xl font-medium text-darkGray flex justify-center items-center mb-6 md:m-0 md:w-1/2">
-					Our Story <MdSouthEast className=" ml-2 text-orange-500" />
-				</h2>
-				<motion.div
-					initial={{ opacity: 0 }}
-					whileInView={{ opacity: 1 }}
-					transition={{ duration: 0.9 }}
-					viewport={{ once: true }}
-					className="w:10/12 md:w-1/2 text-md md:text-lg"
-				>
-					<p className="font-medium">
-						Our story began when our owner, Mr. Nasrullah Khan, a passionate entrepreneur with a love for fashion, noticed a gap in the
-						market for affordable, customizable clothing. Driven by his vision, Mr. Nasrullah founded Nastex, and we have been producing
-						high-quality clothing ever since.
-					</p>
-					<br />
-					<p>
-						At Nastex, we specialize in three main categories of clothing: streetwear, fitness apparel, and sports wear. We work closely
-						with our clients to understand their unique vision and design custom garments that meet their specific needs. From the initial
-						concept to the final product, our team of experienced professionals is committed to delivering exceptional service and
-						outstanding quality.
-					</p>
-					<br />
-					<p>
-						We believe that customization is key to making a lasting impression. Our team is dedicated to providing our clients with unique,
-						customized clothing that stands out in the crowd. We take great pride in our work, and we are confident that our clients will
-						appreciate the quality and attention to detail that we put into every garment.
-					</p>
-					<br />
-					<p>
-						Thank you for choosing Nastex. We look forward to working with you and creating customized clothing that exceeds your
-						expectations.
-					</p>
-				</motion.div>
-			</div>
-			<motion.div
-				initial={{ opacity: 0, y: 100 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				transition={{ delay: 0.5 }}
-				viewport={{ once: true }}
-				className="flex flex-col items-center"
-			>
-				<motion.h2
-					initial={{ opacity: 0, y: 100 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ delay: 0.7 }}
-					viewport={{ once: true }}
-					className=" text-2xl md:text-3xl text-darkGray font-medium"
-				>
-					Message from <span className="text-orange-500">CEO</span>
-				</motion.h2>
-
-				<motion.div
-					initial={{ opacity: 0, y: 100 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ delay: 0.9 }}
-					viewport={{ once: true }}
-					className="md:w-1/2 w-full flex flex-col items-center gap-3"
-				>
-					<h2 className="font-medium text-md md:text-2xl text-center"> Nasrullah Khan</h2>
-					<h2 className="text-md">
-						Founder & CEO - <span className="text-orange-500 font-semibold"> NASTEX</span>
-					</h2>
-				</motion.div>
-				<motion.p
-					initial={{ opacity: 0, y: 100 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ delay: 1.1 }}
-					viewport={{ once: true }}
-					className="md:w-1/2 w-10/12 text-sm md:text-lg mt-3 mb-8"
-				>
-					"Our mission at NASTEX is to design, produce and distribute high-quality clothing that not only meets the needs and preferences of
-					our customers, but also reflects our commitment to sustainability and innovation. We strive to create a positive impact on the
-					environment and society, by implementing eco-friendly and ethical manufacturing practices, supporting fair labor standards, and
-					giving back to the communities we serve."
-				</motion.p>
-			</motion.div>
 		</div>
 	);
 };

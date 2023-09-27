@@ -29,7 +29,7 @@ const Customorder = () => {
 	});
 
 	const onSubmit = (data) => {
-		emailjs.sendForm('service_hdv0oa6', 'template_nilj2st', formRef.current, 'Pp6OX7szD7ZRI4tHH').then(
+		emailjs.sendForm('service_7snplpu', 'template_czcwmkg', formRef.current, 'T3fyVMbTbdn9UU2dt').then(
 			(result) => {
 				toast.success('Inquiry has been sent successfully');
 			},

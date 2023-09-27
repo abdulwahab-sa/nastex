@@ -42,13 +42,13 @@ export const Contact = () => {
 			id: 2,
 			icon: MdPhoneEnabled,
 			title: 'Phone',
-			detail: '92-316-7133715',
+			detail: '92-334-0582500',
 		},
 		{
 			id: 3,
 			icon: MdEmail,
 			title: 'Email',
-			detail: 'info@pentagomfgcorp.com',
+			detail: 'info@nastexenterprises.com',
 		},
 	];
 	return (
@@ -73,7 +73,7 @@ export const Contact = () => {
 						);
 					})}
 				</div>
-				<div className="bg-stone-600 p-6 rounded-md mt-10 md:m-0 w-10/12 md:w-2/5 max-w-sm shadow-md">
+				<div className="bg-stone-600 p-6 rounded-md mt-10 md:m-0 w-10/12 md:w-2/5 max-w-sm shadow-md font-montserrat ">
 					<form onSubmit={handleSubmit(onSubmit)} className="relative">
 						<div className="relative  my-2">
 							<MdPerson className="text-stone-500 absolute text-md z-20 inset-3 " />
@@ -110,7 +110,7 @@ export const Contact = () => {
 						<input
 							type="submit"
 							value="Send Message"
-							className="cursor-pointer w-full text-xs my-3 bg-orange-400 text-neutral-50 p-2 rounded-md hover:bg-red-500 transition-all z-40"
+							className="font-montserrat  cursor-pointer w-full text-xs my-3 bg-orange-400 text-neutral-50 p-2 rounded-md hover:bg-red-500 transition-all z-40"
 						/>
 					</form>
 				</div>
